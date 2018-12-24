@@ -14,13 +14,90 @@
 <div class="container">
     <div class="banner">
         <div class="banner-top">
-            <img class="banner-top-img" src="img/person/user.png" />
-
+            <img class="banner-top-img" id="imgFile" src="img/person/user.png" />
+            <input class="sz-fl-container-file" type="file" id="uppic" onchange="upimg(this)">
         </div>
-
         <div class="banner-name">张凯益</div>
         <div class="banner-ip">手机：<span class="banner-ip-01">15906749977</span></div>
     </div>
+
+    <div class="edit-container">
+
+
+        <div class="list">
+            <a href="person-pass.html">
+                <div class="list-item clearfix">
+                    <div class="list-item-fl fl"><img class="list-item-fl-img" src="img/person/i01.png" />修改密码</div>
+                    <div class="list-item-fr fr"><img class="list-item-fr-img" src="img/person/right.png"></div>
+                </div>
+            </a>
+        </div>
+
+        <div class="list">
+            <a>
+                <div class="list-item clearfix">
+                    <div class="list-item-fl fl"><img class="list-item-fl-img" src="img/person/i02.png" />我的报名</div>
+                    <div class="list-item-fr fr"><img class="list-item-fr-img" src="img/person/right.png"></div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="list">
+            <a>
+                <div class="list-item clearfix">
+                    <div class="list-item-fl fl"><img class="list-item-fl-img" src="img/person/i03.png" />会费缴费</div>
+                    <div class="list-item-fr fr"><img class="list-item-fr-img" src="img/person/right.png"></div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="list">
+            <a>
+                <div class="list-item clearfix">
+                    <div class="list-item-fl fl"><img class="list-item-fl-img" src="img/person/i04.png" />会费缴费查询</div>
+                    <div class="list-item-fr fr"><img class="list-item-fr-img" src="img/person/right.png"></div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="list">
+           <a>
+               <div class="list-item clearfix">
+                   <div class="list-item-fl fl"><img class="list-item-fl-img" src="img/person/i05.png" />信息修改</div>
+                   <div class="list-item-fr fr"><img class="list-item-fr-img" src="img/person/right.png"></div>
+               </div>
+           </a>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+    <div class="submit-contaienr">
+        <div class="bth">退出登录</div>
+    </div>
+
+
+
 </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/person.js"></script>
+<script>
+    function upimg(t) {
+        var imgFile  = t.files[0];
+        var fr = new FileReader();
+        fr.onload = function(){
+            $("#imgFile").attr("src",fr.result)
+        };
+        fr.readAsDataURL(imgFile);
+    }
+</script>
 </body>
 </html>
