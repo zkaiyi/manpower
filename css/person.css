@@ -1,0 +1,5 @@
+.banner{width: 100%;background-image: url("../img/person/banner.jpg");background-size: 100% 100%;background-repeat: no-repeat;height: 2.69rem;padding-top: 0.43rem;}
+.banner-top{width: 1.17rem;margin: auto;border-radius: 50%;border:6px solid #a9ccff;height: 1.17rem;}
+.banner-top-img{width: 100%;    vertical-align: top;}
+.banner-name{width: 100%;text-align: center;color: white;font-size: 0.3rem;line-height: 0.6rem;margin-top: 0.1rem;}
+.banner-ip{width: 100%;text-align: center;color: white;font-size: 0.24rem;}

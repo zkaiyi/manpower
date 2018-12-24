@@ -1,0 +1,24 @@
+.banner{width: 100%;}
+.banner-img{width: 100%;}
+.input-container{width: 90%;margin: auto;}
+.list{width: 100%;height:0.9rem;line-height: 0.9rem;border-radius: 0.1rem;border: 1px solid #b4dcfb;margin-top: 0.35rem; -webkit-box-shadow:1px 3px 1px #d6e2f0 inset; position: relative; }
+.list-img{width:10%; vertical-align: middle;margin-top: 0.18rem;margin-left: 4.26%;}
+.list-s01{width: 1px;height:0.53rem;background-color:#bfbfbf;display: inline-block;margin-top: 0.19rem; margin-left:2.9%;}
+.list-input{height: 0.8rem;line-height: 0.8rem;font-size: 0.3rem;color: #979797;margin-top: 0.05rem;width: 70%;margin-left: 6%;border: none;outline: none;}
+.yzm{width: 100%;margin-top: 0.35rem;}
+.list-yzm{width: 70%;margin-top: 0;}
+.yzm-fr{width: 28%;height: 0.9rem;line-height: 0.9rem;text-align: center;color: white;cursor: pointer;background-color: #005ea6;font-size: 0.3rem;border-radius: 0.1rem;border: none;outline: none;}
+.list-yzm-img{    width: 14.285%;margin-left: 6.098%;}
+.list-yzm-s01{    margin-left: 4.525%;}
+.list-yzm-input{    margin-left: 8.57%;width: 65%;}
+.sz-container{width: 100%;margin-top: 0.35rem;}
+.sz-fl{width:48%;border: 1px solid #b4dcfb;border-radius: 0.1rem; position: relative;}
+.sz-fl-container{margin-top: 0.29rem;position: relative;}
+.sz-fl-container-top{width: 70%;margin: auto;border: 1px dashed #d2d2d2;cursor: pointer;}
+.sz-fl-container-mid{width: 59.8%;margin: auto;border-radius: 0.2rem;background-color:#f8b551;text-align: center ;color: white;font-size: 0.24rem;margin-top: 0.16rem;cursor: pointer;}
+.sz-fl-container-top-i{width:76%;margin: auto; margin-top: 0.21rem;}
+.sz-fl-container-top-i-img{width: 100%;height: 100%;cursor: pointer;}
+.sumit-res{width: 90%;margin: auto;background-color:#5197ff;color: white;text-align: center;height: 0.9rem;line-height: 0.9rem;font-size: 0.48rem;border-radius: 0.5rem;margin-top: 0.5rem; }
+.sumit-res-container{padding-bottom: 0.5rem;}
+.tip{position: absolute;color: red;top: 0.98rem;width: 100%;height: 0.2rem;line-height: 0.2rem;font-size: 12px;}
+.sz-fl-container-file{cursor: pointer;position: absolute;background-color:red;z-index:5;width:100%;height: 100%;top: 0;left: 0;opacity: 0;}

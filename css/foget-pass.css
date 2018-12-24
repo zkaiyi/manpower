@@ -1,0 +1,15 @@
+.container{width:90%;margin: auto; }
+.notice{font-size: 0.24rem;color: #ff3434;line-height: 0.48rem;padding-top: 0.41rem;}
+.item{position: relative;width: 100%;}
+.itemfirst{margin-top: 0.43rem;}
+.item-01{font-size: 0.36rem;color: #5197ff;line-height: 0.6rem;}
+.item-02{width: 100%;height: 0.88rem;line-height: 0.88rem;border: 1px solid #b4dcfb;-webkit-box-shadow:1px 3px 1px #d6e2f0 inset;border-radius: 0.1rem;}
+.item-02-input{display: -webkit-box;width: 94%;font-size: 0.3rem;color: #979797;border: none;outline: none;margin-left: 6%;height: 0.8rem;margin-top: 0.03rem;    background-color: transparent;line-height: 0.8rem;}
+.tip{position: absolute;color: red;top: 1.7rem;width: 100%;height: 0.2rem;line-height: 0.2rem;font-size: 12px;}
+.item{margin-top: 0.64rem;}
+.yzm-container{width: 100%;margin-top: 0.64rem;}
+.item-yzm{    width: 70%;margin-top: 0;}
+.yzm-fr{width: 28%;height: 0.9rem;line-height: 0.9rem;text-align: center;color: white;cursor: pointer;background-color: #005ea6;font-size: 0.3rem;border-radius: 0.1rem;border: none;outline: none;margin-top: 0.6rem;}
+.item-yzm-input{    margin-left: 8.58%;}
+.submit-container{padding-bottom: 0.89rem;}
+.submit{width: 100%;height:0.9rem;line-height: 0.9rem;background-color: #5197ff;color: white;text-align: center; font-size: 0.48rem;border-radius: 2rem;margin-top: 0.6rem;}

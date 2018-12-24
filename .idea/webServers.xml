@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7191a66e-c415-430c-97e6-4e9c6f7fb8b0" name="aa" url="http://192.168.3.125:8082/rlzy">
+        <fileTransfer port="0" mountedRoot="F:\ZKY\ZKY\人力资源12.21\html\rlzy" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
