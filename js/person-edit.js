@@ -119,3 +119,57 @@ $(function () {
         }
     }
 
+    // 活动详情
+    $(function () {
+        $(".a-d-l-c-l-c-fr-int").attr('disabled',true);
+
+        $(document).on("click",".apply-details-edit",function () {
+            $(this).siblings().find(".apply-details-list-container-list").find("input").attr('disabled',false);
+            $(this).addClass("apply-details-edit-add").html("确认修改")
+        })
+
+        $(document).on("click",".apply-details-edit-add",function () {
+            var t = $(this).siblings().find(".apply-details-list-container-list");
+
+            var name01 = t.children().children().find(".name01").val();
+            var zw01 = t.children().children().find(".zw01").val();
+            var mobel01 = t.children().children().find(".mobel01").val();
+            console.log(name01);
+            console.log(zw01);
+            console.log(mobel01);
+
+            if(name01){
+
+            }else {
+                alert("请输入姓名");
+                return false;
+            }
+
+            if(zw01){
+
+            }else {
+                alert("请输入职务");
+                return false;
+            }
+
+            if(checkTEL(mobel01)){
+
+            }else {
+                alert("请检查手机格式");
+                return false;
+            }
+
+
+
+
+            alert("您已经成功修改！");
+            t.children().children().find(".name01").val(name01);
+            t.children().children().find(".zw01").val(zw01);
+            t.children().children().find(".mobel01").val(mobel01);
+            $(this).siblings().find(".apply-details-list-container-list").find("input").attr('disabled',true);
+            $(this).removeClass("apply-details-edit-add").html("修改")
+        })
+
+
+    });
+

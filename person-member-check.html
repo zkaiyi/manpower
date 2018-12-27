@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/foget-pass.css" />
+    <link rel="stylesheet" href="css/member.css" />
+    <script src="js/font.js"></script>
+    <title>会员缴费查询</title>
+</head>
+<body>
+<div class="container">
+    <div class="member-check clearfix">
+        <div class="member-check-fl fl">筛选</div>
+        <div class="member-check-fr fl">
+            <div class="member-check-fr-top">年份<img class="member-check-fr-top-img" src="img/person/member-dowm.png" /></div>
+            <div class="year-down year-down02 hide"></div>
+        </div>
+    </div>
+
+    <div class="list-contaienr member-list-container">
+
+
+        <div class="item">
+            <div class="item-02 clearfix">
+                <div class="item-02-list-fl fl">收件人姓名：</div>
+                <div class="item-02-list-fr fl">张凯益</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-02 clearfix">
+                <div class="item-02-list-fl fl">收件人电话：</div>
+                <div class="item-02-list-fr fl">15906749977</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-02 clearfix item-02-address">
+                <div class="item-02-list-fl fl">收件人地址：</div>
+                <div class="item-02-list-fr fl">浙江省宁波市鄞州区博纳大厦</div>
+            </div>
+        </div>
+
+
+        <div class="item">
+            <div class="item-02 clearfix item-02-address">
+                <div class="item-02-list-fl fl">材料证明：</div>
+                <div class="item-02-list-fr item-02-list-fr-cl fl">
+                    <div class="item-02-list-fr-cl-01"><img class="item-02-list-fr-cl-01-img" src="img/person/member-cl02.jpg" /> </div>
+                    <div class="item-02-list-fr-cl-02">发票</div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script>
+    var myDate= new Date();
+    var startYear=2008;
+    var nowYear=myDate.getFullYear();
+    for (var i=startYear;i<=nowYear;i++) {
+        var html01 = '<div class="year-down-list year-down-list01">'+i+'年</div>';
+        $(".year-down").prepend(html01);
+    };
+    
+    $(document).on("click",".member-check-fr-top",function () {
+        if($(this).siblings().hasClass("hide")){
+            $(this).siblings().slideDown();
+            $(this).siblings().removeClass("hide");
+
+        }else {
+            $(this).siblings().slideUp();
+            $(this).siblings().addClass("hide");
+        }
+    })
+
+    $(document).on("click",".year-down-list",function () {
+        var need_y = $(this).html();
+        $(".member-check-fr-top").html(need_y);
+
+        $(this).parent().slideUp();
+        $(this).parent().addClass("hide");
+
+
+    });
+
+    var w03 = $(".item-02-list-fr-cl-01").width();
+    $(".firm-sz-01").css("height",w03 / 1.5795 + "px" );
+
+
+</script>
+</body>
+</html>

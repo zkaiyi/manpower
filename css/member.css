@@ -1,0 +1,42 @@
+body{background-color: white;}
+.container{width: 100%;}
+/*会员缴费*/
+.member-banner{width: 100%;}
+.member-banner-img{width: 100%;}
+.member-art{width: 90.67%;margin: auto;margin-top: 0.6rem;}
+.member-art-01{font-size: 0.3rem;line-height: 0.6rem;color: #2b2a2a;}
+.member-art-02{font-size: 0.24rem;color: #504f4f;text-indent:0.5rem; line-height: 0.5rem;}
+.member-art-03{font-size: 0.24rem;font-weight: bold;line-height: 0.5rem;color: #5197ff;}
+.member-art-04{margin-top: 0.4rem;}
+.member-next{width: 90.67%;color: #fefefe;text-align: center;cursor: pointer;height: 0.9rem;line-height: 0.9rem;font-size: 0.48rem;background-color: #5197ff;border-radius: 2rem;margin: auto;margin-top: 0.55rem;}
+.member-next a{text-decoration: none;color: white;display: block;width: 100%;height: 100%;}
+
+/*会员缴费详情*/
+.item-02-input-div-img{vertical-align: middle;width: 0.3rem;margin-left: 0.5rem;}
+.item-02-input-div{position: relative;cursor: pointer;}
+.year-down{position: absolute;top: 0.88rem;left: 0;background-color: white;width: 80%;z-index: 5;border: 1px solid #2b2a2a;border-top: none;border-radius:  0 0 0.5rem 0.5rem;height: 3.5rem;overflow-y: auto;}
+.year-down-list{font-size: 0.3rem;color: #333333;padding-left: 10%;line-height: 0.7rem;cursor: pointer;}
+.year-down-list-a{background-color: #d6d8dc;}
+.item-02-cl-center{position: relative;width: 64%;margin: auto;}
+.item-02-cl-center-01{width: 100%;border: 1px dashed #d4d4d4;overflow: hidden;margin-top: 0.4rem;}
+.item-02-cl-center-01-img{width: 100%;height: 100%;}
+.item-02-cl-center-02{width: 45.6%;margin: auto;background-color:#f8b551;color: white;text-align: center;height: 0.44rem;line-height: 0.44rem;cursor: pointer; font-size: 0.24rem;border-radius: 0.5rem;margin-top: 0.28rem;}
+.sz-fl-container-file{position: absolute;top: 0;left: 0;width: 100%;height: 100%;outline: none;opacity: 0;cursor: pointer;}
+.member-container{padding-bottom: 0.8rem;}
+
+
+/*会员缴费查询*/
+.member-check{height: 0.9rem;line-height: 0.9rem;width: 100%;background-color: #eeeeee;}
+.member-check-fl{width: 19%;text-align: center;color: white;background-color:#5197ff; line-height: 0.9rem;font-size: 0.3rem;}
+.member-check-fr{width: 19%;text-align: center;position: relative;}
+.member-check-fr-top{font-size: 0.26rem;color:#2b2a2a;line-height: 0.9rem;width: 100%;cursor: pointer;}
+.member-check-fr-top-img{width: 0.2rem;vertical-align: middle;margin-left: 0.1rem;}
+.year-down02{width: 100%;border-radius:  0  0 0.1rem 0.1rem;}
+.year-down-list01{padding-left: 0;text-align: center;}
+.member-list-container{width:90%;margin: auto; }
+.item-02-list-fl{font-size: 0.3rem;color: #5197ff;width: 31%;text-align: right;}
+.item-02-list-fr{font-size: 0.3rem;color: #2b2a2a;width: 65%;margin-left:2%;}
+.item-02-address{height: auto;}
+.item-02-list-fr-cl-01{width: 80%;border: 1px dashed #d4d4d4;overflow: hidden;margin-top: 0.5rem;}
+.item-02-list-fr-cl-01-img{width: 100%;height: 100%;}
+.item-02-list-fr-cl-02{width: 80%;text-align: center;font-size: 0.24rem;color: #2b2a2a;}
