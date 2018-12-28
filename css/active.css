@@ -1,16 +1,16 @@
 .banner{width: 100%;}
 .banner-img{width: 100%;}
-.title-container{width: 100%;background-color: white;margin-top: 0.2rem;}
+.title-container{width: 100%;background-color: white;}
 .title{width: 90.67%;margin: auto;padding-top: 0.27rem;padding-bottom: 0.1rem;}
 .title-01{font-size: 0.32rem;color: #2b2a2a;line-height: 0.48rem;font-weight: bold;}
 .title-02{font-size: 0.24rem;color: #999999;line-height: 0.48rem;}
 .title-container02{margin-top: 0.08rem;}
 .title02-01{font-size: 0.3rem;line-height: 0.6rem;color: #333333;text-indent: 0.6rem;}
-.title02-02-t{font-size: 0.24rem;line-height: 0.48rem;color: #333333;}
+.title02-02-t{font-size: 0.3rem;line-height: 0.48rem;color: #333333;}
 .title02-03{font-size: 0.24rem;line-height: 0.48rem;color: #333333;margin-top: 0.35rem;}
 .title02{padding-top: 0.4rem;padding-bottom: 0.9rem;}
 .title02-02{margin-top: 0.6rem;}
-.active-sub{width: 90.67%;margin: auto;background-color:#5197ff;text-align: center;color: white;font-size: 0.36rem; height: 0.8rem;line-height: 0.8rem;margin-top:0.35rem;cursor: pointer; }
+.active-sub{width: 90.67%;margin: auto;background-color:#5197ff;text-align: center;color: white;font-size: 0.36rem; height: 0.8rem;line-height: 0.8rem;margin-top:0.35rem;cursor: pointer;border-radius: 0.1rem; }
 .container-active{padding-bottom: 0.5rem;width: 100%;}
 
 /*弹出层遮罩*/

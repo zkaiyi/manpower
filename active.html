@@ -5,11 +5,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/foget-pass.css" />
     <link rel="stylesheet" href="css/active.css" />
     <script src="js/font.js"></script>
     <title>活动</title>
+    <style>
+        body{background-color:#f1f1f1; }
+    </style>
 </head>
 <body>
 <div class="container container-active">
@@ -94,15 +98,24 @@
             alert("人数不能为空！" );
         }
 
-
-
-
-
-    // window.location.href = "history.html?need_ID="+need_ID+"&DataName="+encodeURI(DataName)+"&TypeName="+encodeURI(TypeName)+"&real="+encodeURI(realuel);
-    //     alert("最多不能超过" +synum + "人！" );
-    //     window.location.href="active-details.html?num="+num;
-    //     alert("人数不能为空！" );
     }
+
+    $(document).on("click",".tcc-zz",function () {
+        $(".tcc-zz").addClass("hide");
+        $(".tcc-wapper").removeClass("tcc-wapper-add");
+
+        $("html").css({
+            overflow:"auto",
+            height:"auto"
+        });
+
+        $("body").css({
+            overflow:"auto",
+            height:"auto"
+        })
+
+
+    })
 </script>
 </body>
 </html>

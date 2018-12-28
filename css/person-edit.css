@@ -29,6 +29,6 @@ body{background-color: #f5f5f5;}
 .firm-top-01-int::-webkit-input-placeholder{color: #333333;}
 .mobel-yzm-top-01{width: 65%;}
 .mobel-yzm{margin-top: 0.25rem;}
-.yzm-fr{width: 30%;color: white;height: 0.91rem;line-height: 0.91rem;border: none;outline: none;    border-radius: 5px;background-color: #f6bd59;}
+.yzm-fr{-webkit-appearance: none;width: 30%;color: white;height: 0.91rem;line-height: 0.91rem;border: none;outline: none;    border-radius: 5px;background-color: #f6bd59;}
 .mobel-top-contaienr{padding-bottom: 0.56rem;}
 .mobel-yzm-top-01-int{    margin-left: 7.69%;}
