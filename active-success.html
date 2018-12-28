@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/foget-pass.css" />
     <link rel="stylesheet" href="css/active.css" />
+    <link rel="stylesheet" href="css/active-details.css" />
     <script src="js/font.js"></script>
-    <title>活动</title>
+    <title>活动-报名成功</title>
 </head>
 <body>
 <div class="container container-active">
@@ -46,63 +47,14 @@
 
 </div>
 
-<div class="tcc-zz hide"></div>
-
-<div class="tcc-wapper">
-    <div class="tcc-wapper-title clearfix"><div class="tcc-wapper-title-span fl"></div>填写报名人数</div>
-
-    <div class="tcc-wapper-item">
-        <div class="item">
-            <div class="item-01">报名人数</div>
-            <div class="item-02"><input id="num" class="item-02-input" type="text" placeholder="请输入您的报名人数"></div>
-            <div id="tip2" class="tip hide">请输入报名人数！</div>
-        </div>
+<div class="tcc-zz"></div>
+<div class="success-wipper">
+    <div class="success-wipper-t1">
+        <img class="success-wipper-t1-img" src="img/active/success.png" />
+        <div class="success-wipper-t1-t">填写成功</div>
     </div>
-
-    <div class="tcc-wapper-qd" onclick="qd()">确定</div>
-
+    <div class="success-wipper-t2"><a href="index.html">返回</a></div>
 </div>
 
-<script src="js/jquery.min.js"></script>
-<script>
-    $(document).on("click",".active-sub",function () {
-        $(".tcc-zz").removeClass("hide");
-        $(".tcc-wapper").addClass("tcc-wapper-add");
-
-        $("html").css({
-            overflow:"hidden",
-            height:"100%"
-        });
-
-        $("body").css({
-            overflow:"hidden",
-            height:"100%"
-        })
-    });
-    var synum = $("#synum").text();
-    console.log(synum);
-    function qd() {
-        var num = $("#num").val();
-        console.log(num);
-        if(num){
-            if(num > 12){
-                alert("最多不能超过" +synum + "人！" );
-            }else {
-                window.location.href="active-details.html?num="+num;
-            }
-        }else {
-            alert("人数不能为空！" );
-        }
-
-
-
-
-
-    // window.location.href = "history.html?need_ID="+need_ID+"&DataName="+encodeURI(DataName)+"&TypeName="+encodeURI(TypeName)+"&real="+encodeURI(realuel);
-    //     alert("最多不能超过" +synum + "人！" );
-    //     window.location.href="active-details.html?num="+num;
-    //     alert("人数不能为空！" );
-    }
-</script>
 </body>
 </html>
