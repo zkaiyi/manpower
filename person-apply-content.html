@@ -43,7 +43,11 @@
         </div>
     </div>
 
-    <div class="active-sub">我要报名</div>
+
+    <div class="active-sub-qx clearfix">
+        <div class="active-sub-qx-fl fl">取消</div>
+        <div class="active-sub-qx-fl fr"><a href="person-apply-details.html">修改</a></div>
+    </div>
 
 
 
@@ -69,55 +73,6 @@
 
 </div>
 
-<script src="js/jquery.min.js"></script>
-<script>
-    $(document).on("click",".active-sub",function () {
-        $(".tcc-zz").removeClass("hide");
-        $(".tcc-wapper").addClass("tcc-wapper-add");
 
-        $("html").css({
-            overflow:"hidden",
-            height:"100%"
-        });
-
-        $("body").css({
-            overflow:"hidden",
-            height:"100%"
-        })
-    });
-    var synum = $("#synum").text();
-    console.log(synum);
-    function qd() {
-        var num = $("#num").val();
-        console.log(num);
-        if(num){
-            if(num > 12){
-                alert("最多不能超过" +synum + "人！" );
-            }else {
-                window.location.href="active-details.html?num="+num;
-            }
-        }else {
-            alert("人数不能为空！" );
-        }
-
-    }
-
-    $(document).on("click",".tcc-zz",function () {
-        $(".tcc-zz").addClass("hide");
-        $(".tcc-wapper").removeClass("tcc-wapper-add");
-
-        $("html").css({
-            overflow:"auto",
-            height:"auto"
-        });
-
-        $("body").css({
-            overflow:"auto",
-            height:"auto"
-        })
-
-
-    })
-</script>
 </body>
 </html>

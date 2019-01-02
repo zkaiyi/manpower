@@ -42,3 +42,12 @@
 .tcc-wapper-item{width: 91.59%;margin: auto;}
 .item-01{color: #333333;font-size: 0.3rem;}
 .tcc-wapper-qd{width:49.857%;margin: auto;height: 0.8rem;line-height: 0.8rem;background-color: #5197ff;text-align: center;cursor: pointer;color: white; font-size: 0.36rem;border-radius: 2rem;    margin-top: 0.8rem;}
+
+
+
+
+
+/*个人报名取消报名*/
+.active-sub-qx{width: 90.67%;margin: auto;height: 0.8rem;    margin-top: 0.35rem;}
+.active-sub-qx-fl{width: 48%;text-align: center;color: white;    background-color: #5197ff;font-size: 0.36rem;    line-height: 0.8rem;cursor: pointer;border-radius: 0.1rem;}
+.active-sub-qx-fl a{text-decoration: none;color: white;}
