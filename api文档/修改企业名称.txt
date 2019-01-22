@@ -1,0 +1,19 @@
+修改企业名称
+/CompanyInfo/Register/ChangeName
+
+传值
+{
+	Name:'企业名称',
+	TradePermit:'营业执照'
+}
+示例
+{
+	Name:'企业企业企业',
+	TradePermit:'http://localhost:2605/upload/20190109/a8f67d751c484a45a3c9b272907f4045.jpg'
+}
+返回值
+{
+    "Success": true,
+    "Infor": null,
+    "Msg": "提交成功,请等待审核"
+}

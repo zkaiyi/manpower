@@ -1,0 +1,18 @@
+﻿api返回数据格式
+{
+    "Success": bool,
+    "Infor": object,
+    "Msg": string
+}
+Success
+	成功 = true
+	失败 = false
+Infor
+	成功内容，失败为null
+Msg
+	描述
+
+	
+	
+地址：
+http://rlzyapi.imengxin.me

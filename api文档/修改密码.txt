@@ -1,0 +1,20 @@
+修改密码
+/CompanyInfo/Register/ChangePassword
+传值
+{
+	OldPass:'旧密码',
+	NewPass:'新密码'
+}
+
+示例
+
+{
+	OldPass:'123456',
+	NewPass:'654321'
+}
+返回值
+{
+    "Success": true,
+    "Infor": null,
+    "Msg": "修改成功"
+}

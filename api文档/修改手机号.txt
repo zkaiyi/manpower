@@ -1,0 +1,18 @@
+修改手机号
+/CompanyInfo/Register/ChangePhone
+传值
+{
+	Phone:'手机号',
+	Code:'验证码'
+}
+示例
+{
+	Phone:'17855813651',
+	Code:'7105'
+}
+返回值
+{
+    "Success": true,
+    "Infor": null,
+    "Msg": "修改成功"
+}

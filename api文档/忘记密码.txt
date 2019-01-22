@@ -1,0 +1,22 @@
+忘记密码
+/CompanyInfo/Register/ForgetPass
+传值
+{
+	Name:'公司名称',
+	Phone：'手机',
+	Password:'密码',
+	Code:'验证码'
+}
+示例
+{
+	Name:'测试公司',
+	Phone：'17855813651',
+	Password:'654321',
+	Code:'7105'
+}
+返回值
+{
+    "Success": true,
+    "Infor": null,
+    "Msg": "修改成功"
+}

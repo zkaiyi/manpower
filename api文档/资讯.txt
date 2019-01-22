@@ -1,0 +1,71 @@
+﻿获取列表
+/Notice/Notice/GetList
+传值
+Type	0通知公告 1信息前沿
+
+示例
+传值:
+{
+	Type:0
+}
+返回值：
+{
+    "Success": true,
+    "Infor": [
+        {
+            "Title": "1",
+            "Source": "1",
+            "ReleaseTime": "2019-01-09 09:36:36",
+            "NoticeContent": "<p>\r\n\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 天一阁?月湖5A级景区创建工作已进入关键时期。8月10日下午，省旅游局副书记、副局长傅玮率队考察天一阁?月湖5A级景区创建工作。他要求，注重细节、查漏补缺，继续完善各项配套设施，确保顺利通过创建国家5A级景区的检查验收。省旅游局规划处处长张雄文，市旅游局副局长陈刚，区领导褚孟形、毛孟军、李平等陪同考察。<br />\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;傅玮一行花了近两个小时的时间，对天一阁?月湖景区游客中心、天一阁广场、天一阁博物馆、月湖、银台第、金汇小镇等景点进行实地踏勘，详细了解天一阁?月湖景区创建进展情况。<br />\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在随后召开的座谈会上，傅玮充分肯定了景区创建所取得的进展和成效。就下一步工作，傅玮指出，当前，天一阁?月湖5A级景区创建工作时间紧、任务重，一定要明确创建工作的最后期限，倒推时间完成各项工作；要更加注重细节建设，做到景区网络功能更加完善，标识标牌更加清晰，建筑材料实现日日清、沿街立面整治速度加快；要更加丰富景区旅游业态建设，提升游客的体验感；要强化协调作战确保取得实效，加强联动协作省、市、区，共同推进创5A景区工作顺利通过验收，擦亮天一阁?月湖这张旅游名片。\r\n</p>\r\n<p align=\"center\">\r\n\t<img alt=\"\" src=\"http://nbtygyh.haishu.gov.cn/upload/201708/14/201708141134118896.jpg\" /> \r\n</p>\r\n<p align=\"center\">\r\n\t&nbsp;\r\n</p>\r\n<p align=\"center\">\r\n\t<img alt=\"\" src=\"http://nbtygyh.haishu.gov.cn/upload/201708/14/201708141134381396.jpg\" /> \r\n</p>\r\n<p align=\"center\">\r\n\t&nbsp;\r\n</p>\r\n<p align=\"center\">\r\n\t&nbsp;\r\n</p>\r\n<p align=\"center\">\r\n\t&nbsp;\r\n</p>\r\n<p align=\"center\">\r\n\t&nbsp;\r\n</p>\r\n<p>\r\n\t&nbsp;\r\n</p>",
+            "Type": 1,
+            "TypeName": "信息前沿",
+            "AddTime": "2019-01-09 10:12:40",
+            "ID": 2
+        },
+        {
+            "Title": "1",
+            "Source": "1",
+            "ReleaseTime": "2019-01-09 09:43:20",
+            "NoticeContent": "<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 天一阁?月湖5A级景区创建工作已进入关键时期。8月10日下午，省旅游局副书记、副局长傅玮率队考察天一阁?月湖5A级景区创建工作。他要求，注重细节、查漏补缺，继续完善各项配套设施，确保顺利通过创建国家5A级景区的检查验收。省旅游局规划处处长张雄文，市旅游局副局长陈刚，区领导褚孟形、毛孟军、李平等陪同考察。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;傅玮一行花了近两个小时的时间，对天一阁?月湖景区游客中心、天一阁广场、天一阁博物馆、月湖、银台第、金汇小镇等景点进行实地踏勘，详细了解天一阁?月湖景区创建进展情况。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在随后召开的座谈会上，傅玮充分肯定了景区创建所取得的进展和成效。就下一步工作，傅玮指出，当前，天一阁?月湖5A级景区创建工作时间紧、任务重，一定要明确创建工作的最后期限，倒推时间完成各项工作；要更加注重细节建设，做到景区网络功能更加完善，标识标牌更加清晰，建筑材料实现日日清、沿街立面整治速度加快；要更加丰富景区旅游业态建设，提升游客的体验感；要强化协调作战确保取得实效，加强联动协作省、市、区，共同推进创5A景区工作顺利通过验收，擦亮天一阁?月湖这张旅游名片。</p>\n<p align=\"center\"><img src=\"http://nbtygyh.haishu.gov.cn/upload/201708/14/201708141134118896.jpg\" alt=\"\" /></p>\n<p align=\"center\">&nbsp;</p>\n<p align=\"center\"><img src=\"http://nbtygyh.haishu.gov.cn/upload/201708/14/201708141134381396.jpg\" alt=\"\" /></p>\n<p align=\"center\">&nbsp;</p>\n<p align=\"center\">&nbsp;</p>\n<p align=\"center\">&nbsp;</p>\n<p align=\"center\">&nbsp;</p>\n<p>&nbsp;</p>",
+            "Type": 1,
+            "TypeName": "信息前沿",
+            "AddTime": "2019-01-09 10:19:19",
+            "ID": 3
+        }
+    ],
+    "Msg": "获取成功"
+}
+Title：标题
+Source：来源
+ReleaseTime：发布时间
+NoticeContent：内容
+Type，TypeName：类型
+AddTime： 添加时间
+ID：编号
+----------------------------------------------------------------------------
+获取详细信息
+/Notice/Notice/GetInfo
+传值
+ID		列表中的ID
+
+示例
+传值
+{
+	ID:2
+}
+返回值：
+{
+    "Success": true,
+    "Infor": {
+        "Title": "1",
+        "Source": "1",
+        "ReleaseTime": "2019-01-09 09:36:36",
+        "NoticeContent": "<p>\r\n\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 天一阁?月湖5A级景区创建工作已进入关键时期。8月10日下午，省旅游局副书记、副局长傅玮率队考察天一阁?月湖5A级景区创建工作。他要求，注重细节、查漏补缺，继续完善各项配套设施，确保顺利通过创建国家5A级景区的检查验收。省旅游局规划处处长张雄文，市旅游局副局长陈刚，区领导褚孟形、毛孟军、李平等陪同考察。<br />\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;傅玮一行花了近两个小时的时间，对天一阁?月湖景区游客中心、天一阁广场、天一阁博物馆、月湖、银台第、金汇小镇等景点进行实地踏勘，详细了解天一阁?月湖景区创建进展情况。<br />\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在随后召开的座谈会上，傅玮充分肯定了景区创建所取得的进展和成效。就下一步工作，傅玮指出，当前，天一阁?月湖5A级景区创建工作时间紧、任务重，一定要明确创建工作的最后期限，倒推时间完成各项工作；要更加注重细节建设，做到景区网络功能更加完善，标识标牌更加清晰，建筑材料实现日日清、沿街立面整治速度加快；要更加丰富景区旅游业态建设，提升游客的体验感；要强化协调作战确保取得实效，加强联动协作省、市、区，共同推进创5A景区工作顺利通过验收，擦亮天一阁?月湖这张旅游名片。\r\n</p>\r\n<p align=\"center\">\r\n\t<img alt=\"\" src=\"http://nbtygyh.haishu.gov.cn/upload/201708/14/201708141134118896.jpg\" /> \r\n</p>\r\n<p align=\"center\">\r\n\t&nbsp;\r\n</p>\r\n<p align=\"center\">\r\n\t<img alt=\"\" src=\"http://nbtygyh.haishu.gov.cn/upload/201708/14/201708141134381396.jpg\" /> \r\n</p>\r\n<p align=\"center\">\r\n\t&nbsp;\r\n</p>\r\n<p align=\"center\">\r\n\t&nbsp;\r\n</p>\r\n<p align=\"center\">\r\n\t&nbsp;\r\n</p>\r\n<p align=\"center\">\r\n\t&nbsp;\r\n</p>\r\n<p>\r\n\t&nbsp;\r\n</p>",
+        "Type": 1,
+        "TypeName": "信息前沿",
+        "AddTime": "2019-01-09 10:12:40",
+        "ID": 2
+    },
+    "Msg": "获取成功"
+}
+

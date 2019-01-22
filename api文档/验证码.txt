@@ -1,0 +1,15 @@
+﻿发送验证码
+CompanyInfo/Register/SendCode
+传值
+Phone 手机号
+
+示例
+{
+	Phone:'17855813651'
+}
+返回值
+{
+    "Success": true,
+    "Infor": null,
+    "Msg": "发送成功"
+}

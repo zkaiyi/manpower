@@ -1,0 +1,34 @@
+/获取活动详情
+/ActivityInfo/Info
+传值
+{
+	ID:列表中的ID
+}
+示例
+{
+	ID:24
+}
+返回值
+{
+    "Success": true,
+    "Infor": {
+        "Name": "活动22",//名称
+        "ReadNum": 100,//阅读数
+        "SignupNum": 2,//总报名人数
+        "LastNum": 2,//剩余人数
+        "ActivityContent": "<p>1231231000zxczxc</p>",//内容
+        "ActivityTime": "2019-01-20 19:51:00",//活动时间
+        "SSignupTime": "2019-01-17 19:51:00",//报名开始时间
+        "ESignupTime": "2019-01-19 19:51:00",//报名结束时间
+        "Address": "北区20幢501",//活动地址
+        "Cost": "无",//费用
+        "UpdateTime": "2019-01-13 20:18:00",
+        "MinLimitNum": 10,//每个公司最小报名人数
+        "MaxLimitNum": 10,//每个公司最大报名人数
+        "CompanyIDS": null,
+        "CoverImg": null,//封面图片
+        "AddTime": "2019-01-13 19:53:00",
+        "ID": 24//活动ID
+    },
+    "Msg": "获取成功"
+}

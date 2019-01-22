@@ -1,0 +1,17 @@
+修改联系人
+/CompanyInfo/Register/ChangeContact
+
+传值
+{
+	Name:'联系人名称'
+}
+示例
+{
+	Name:'喝喝喝'
+}
+返回值
+{
+    "Success": true,
+    "Infor": null,
+    "Msg": "修改成功"
+}

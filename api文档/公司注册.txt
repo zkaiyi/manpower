@@ -1,0 +1,31 @@
+公司注册
+/CompanyInfo/Register
+
+传值
+{
+	Name:'公司名称',
+	Password:'密码',
+	Contact：'联系人',
+	PhoneNumber:'手机号',
+	ApplyForm:'申请表',
+	TradePermit:'营业执照',
+	Code:'验证码'
+}
+
+示例
+{
+	Name:'测试公司',
+	Password:'123456',
+	Contact：'叶金波',
+	PhoneNumber:'17855813651',
+	ApplyForm:'http://localhost:6160/file/upload/20190114/988ec3d38c3d442bb84f3038a74482bf.png',
+	TradePermit:'http://localhost:6160/file/upload/20190114/988ec3d38c3d442bb84f3038a74482bf.png',
+	Code:'7105'
+}
+
+返回值
+{
+    "Success": true,
+    "Infor": null,
+    "Msg": "注册成功，等待后台审核"
+}
