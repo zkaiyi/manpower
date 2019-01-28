@@ -15,5 +15,31 @@ function login() {
         $("#tips2").removeClass("hide");
     }
 
+    var json = {
+        Account:name,
+        Password:password
+    };
+
+
+
+        $.ajax({
+            url:callurl + "/CompanyInfo/Login",
+            type:"post",
+            data:json,
+            success:function (res) {
+                console.log(res);
+
+            },
+            error:function (xml) {
+                console.log(xml);
+            }
+        })
+
+
+
+
+
+
+
 
 }

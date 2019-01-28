@@ -1,1 +1,1 @@
-var url = "http://rlzyapi.imengxin.me";
+var callurl = "http://rlzyapi.imengxin.me";
