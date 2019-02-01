@@ -1,0 +1,6 @@
+根据活动ID 获取报名的人
+/ActivityInfo/SignUp/GetList
+传值
+{
+	"ID":活动ID
+}

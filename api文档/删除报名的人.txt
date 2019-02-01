@@ -1,0 +1,6 @@
+删除报名的人
+/ActivityInfo/SignUp/DelSignUpPeople
+传值
+{
+	"ID":报名人员记录的ID
+}

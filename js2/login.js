@@ -20,26 +20,23 @@ function login() {
         Password:password
     };
 
-
-
-        $.ajax({
-            url:callurl + "/CompanyInfo/Login",
-            type:"post",
-            data:json,
-            success:function (res) {
-                console.log(res);
-
-            },
-            error:function (xml) {
-                console.log(xml);
+    $.ajax({
+        url:callurl + "/CompanyInfo/Login",
+        type:"post",
+        data:json,
+        success:function (res) {
+            console.log(res);
+            console.log(res.Infor);
+            if(res.Msg == "登录成功"){
+                window.location.href = 'index.html'
             }
-        })
 
 
+        },
+        error:function (xml) {
+            console.log(xml);
+        }
+    })
 
-
-
-
-
-
+    
 }

@@ -1,0 +1,10 @@
+上传会费凭证
+/CompanyInfo/MembershipFee/Edit
+传值
+{
+	"Years":"年份",
+	"Recipient":"收件人",
+	"Phone":"联系电话",
+	"Address":"地址",
+	"ImgUrl":"图片地址"
+}

@@ -16,28 +16,28 @@
     </style>
 </head>
 <body>
-<div class="container container-active">
-    <div class="banner"><img class="banner-img" src="img/active/banner.jpg" /></div>
+<div class="container container-active" id="content">
+    <div class="banner"><img class="banner-img" id="cover-img" onerror="this.src='img/active/banner.jpg'" src="img/active/banner.jpg" /></div>
 
     <div class="title-container">
         <div class="title">
-            <div class="title-01">“新形态下的绩效管理趋势与优秀宁波企业管理实践”沙龙活动成功举办</div>
-            <div class="title-02">阅读：1253</div>
+            <div class="title-01" id="content-title"></div>
+            <div class="title-02">阅读：<span id="read-num"></span></div>
             <div class="title-02 clearfix">
-                <div class="title-03-01 fl">总报名人数：125人</div>
-                <div class="title-03-01 fr">剩余报名人数：<span id="synum">12</span>人</div>
+                <div class="title-03-01 fl">总报名人数：<span id="apply-num"></span>人</div>
+                <div class="title-03-01 fr">剩余报名人数：<span id="synum"></span>人</div>
             </div>
         </div>
     </div>
 
     <div class="title-container title-container02">
         <div class="title title02">
-           <div class="title02-01">8月27日，宁波市人力资源经理协会薪酬绩效专委会“新形态下的绩效管理趋势与优秀宁波企业管理实践”沙龙活动在轿辰大厦成功举办。均胜集团、轿辰集团、博威集团、公牛集团、赛尔富电子</div>
+           <div class="title02-01" id="content-info"></div>
            <div class="title02-02">
-               <div class="title02-02-t">活动时间：7月29日（周日）上午 9:30</div>
-               <div class="title02-02-t">活动地点：宁波市南部商务区博纳大厦1601</div>
-               <div class="title02-02-t">费       用：免费 </div>
-               <div class="title02-02-t">报名时间：即日起</div>
+               <div class="title02-02-t" id="activity-time"></div>
+               <div class="title02-02-t" id="activity-place"></div>
+               <div class="title02-02-t" id="activity-money"></div>
+               <div class="title02-02-t" id="apply-time"></div>
            </div>
            <div class="title02-03">报名成功者，工作人员将会发短信通知到馆参加活动，请保持手机通畅。接到通知的读者，如因故无法出席活动，请提前一天拨打服务台电话告知，如未主动取消，将暂停下一期活动资格。</div>
         </div>
@@ -45,16 +45,12 @@
 
     <div class="active-sub">我要报名</div>
 
-
-
-
-
-
 </div>
 
 <div class="tcc-zz hide"></div>
 
-<div class="tcc-wapper">
+<!--填写报名人数-->
+<div class="tcc-wapper" id="people-num">
     <div class="tcc-wapper-title clearfix"><div class="tcc-wapper-title-span fl"></div>填写报名人数</div>
 
     <div class="tcc-wapper-item">
@@ -69,42 +65,62 @@
 
 </div>
 
+<!--填写报名人员信息-->
+<div class="tcc-wapper hide" id="people-list">
+    <div class="items-container">
+
+    </div>
+
+
+    <div class="tcc-wapper-qd" onclick="qd1()">确定</div>
+
+</div>
+
+<!--报名成功-->
+<div class="success-wipper hide">
+    <div class="success-wipper-t1">
+        <img class="success-wipper-t1-img" src="img/active/success.png" />
+        <div class="success-wipper-t1-t">填写成功</div>
+    </div>
+    <div class="success-wipper-t2"><a href="index.html">返回</a></div>
+</div>
+
 <script src="js/jquery.min.js"></script>
 <script>
     $(document).on("click",".active-sub",function () {
-        $(".tcc-zz").removeClass("hide");
-        $(".tcc-wapper").addClass("tcc-wapper-add");
 
-        $("html").css({
-            overflow:"hidden",
-            height:"100%"
-        });
-
-        $("body").css({
-            overflow:"hidden",
-            height:"100%"
-        })
-    });
-    var synum = $("#synum").text();
-    console.log(synum);
-    function qd() {
-        var num = $("#num").val();
-        console.log(num);
-        if(num){
-            if(num > 12){
-                alert("最多不能超过" +synum + "人！" );
-            }else {
-                window.location.href="active-details.html?num="+num;
-            }
+        if($(".active-sub").text() == "活动已结束"){
+            alert("活动已结束")
+        }else if($(".active-sub").text() == "名额已满"){
+            alert("名额已满")
+        }else if($(".active-sub").text() == "还未开始"){
+            alert("还未开始")
         }else {
-            alert("人数不能为空！" );
+
+            $(".tcc-zz").removeClass("hide");
+            $(".tcc-wapper").addClass("tcc-wapper-add");
+
+            $("html").css({
+                overflow:"hidden",
+                height:"100%"
+            });
+
+            $("body").css({
+                overflow:"hidden",
+                height:"100%"
+            })
+
         }
 
-    }
+
+    });
 
     $(document).on("click",".tcc-zz",function () {
         $(".tcc-zz").addClass("hide");
         $(".tcc-wapper").removeClass("tcc-wapper-add");
+        $("#people-list").addClass("hide");
+        $(".items-container").html("");
+        $(".success-wipper").addClass("hide");
 
         $("html").css({
             overflow:"auto",
@@ -115,9 +131,14 @@
             overflow:"auto",
             height:"auto"
         })
-
-
     })
-</script>
+
+
+ </script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js2/url.js"></script>
+<script src="js2/util.js"></script>
+<script src="js2/active.js"></script>
 </body>
 </html>

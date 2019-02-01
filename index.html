@@ -18,93 +18,8 @@
 <div class="container">
     <div class="banner"><img class="banner-img" src="img/index/banner.jpg" /></div>
 
-    <div class="active-list">
-        <!--一组-->
-        <div class="active-list-container">
-            <div class="list clearfix">
-                <div class="list-fl fl"><img class="list-fl-img" src="img/index/active-01.png" /></div>
-                <div class="list-fr fr">
-                    <div class="list-fr-top clearfix">
-                        <div class="list-fr-top-fl fl">外教老师再一次来到我们再一次来到</div>
-                        <div class="list-fr-top-fr fr">进行中</div>
-                    </div>
-                    <div class="list-fr-bot">2014年4月19日苏州高新区人才专场招聘会岗位信息2014年4月19日苏州高新区人才专场招聘会岗位信息</div>
-                </div>
-            </div>
-        </div>
-        <!--一组-->
-        <div class="active-list-container">
-            <div class="list clearfix">
-                <div class="list-fl fl"><img class="list-fl-img" src="img/index/active-02.png" /></div>
-                <div class="list-fr fr">
-                    <div class="list-fr-top clearfix">
-                        <div class="list-fr-top-fl fl">外教老师再一次来到我们再一次来到</div>
-                        <div class="list-fr-top-fr fr">进行中</div>
-                    </div>
-                    <div class="list-fr-bot">高层次人才洽谈会深圳专场岗位信息深圳专场岗位信息深圳专场岗位信息高层次人才洽谈会深圳专场岗位信息深圳专场岗位信息深圳专场岗位信息 ..</div>
-                </div>
-            </div>
-        </div>
-        <div class="active-list-container">
-            <div class="list clearfix">
-                <div class="list-fl fl"><img class="list-fl-img" src="img/index/active-03.png" /></div>
-                <div class="list-fr fr">
-                    <div class="list-fr-top clearfix">
-                        <div class="list-fr-top-fl fl">外教老师再一次来到我们再一次来到</div>
-                        <div class="list-fr-top-fr list-fr-top-fr-man fr">名额已满</div>
-                    </div>
-                    <div class="list-fr-bot">策略性人才甄选和培养发展宁波知名企业研讨峰会邀请函策略性人才甄选和培养发展宁波知名企业研讨峰会邀请函...</div>
-                </div>
-            </div>
-        </div>
-        <div class="active-list-container">
-            <div class="list clearfix">
-                <div class="list-fl fl"><img class="list-fl-img" src="img/index/active-01.png" /></div>
-                <div class="list-fr fr">
-                    <div class="list-fr-top clearfix">
-                        <div class="list-fr-top-fl fl">外教老师再一次来到我们再一次来到</div>
-                        <div class="list-fr-top-fr list-fr-top-fr-js fr">已结束</div>
-                    </div>
-                    <div class="list-fr-bot">2014年4月19日苏州高新区人才专场招聘会岗位信息2014年4月19日苏州高新区人才专场招聘会岗位信息</div>
-                </div>
-            </div>
-        </div>
-        <div class="active-list-container">
-            <div class="list clearfix">
-                <div class="list-fl fl"><img class="list-fl-img" src="img/index/active-02.png" /></div>
-                <div class="list-fr fr">
-                    <div class="list-fr-top clearfix">
-                        <div class="list-fr-top-fl fl">外教老师再一次来到我们再一次来到</div>
-                        <div class="list-fr-top-fr fr">进行中</div>
-                    </div>
-                    <div class="list-fr-bot">高层次人才洽谈会深圳专场岗位信息深圳专场岗位信息深圳专场岗位信息高层次人才洽谈会深圳专场岗位信息深圳专场岗位信息深圳专场岗位信息 ..</div>
-                </div>
-            </div>
-        </div>
-        <div class="active-list-container">
-            <div class="list clearfix">
-                <div class="list-fl fl"><img class="list-fl-img" src="img/index/active-03.png" /></div>
-                <div class="list-fr fr">
-                    <div class="list-fr-top clearfix">
-                        <div class="list-fr-top-fl fl">外教老师再一次来到我们再一次来到</div>
-                        <div class="list-fr-top-fr list-fr-top-fr-man fr">名额已满</div>
-                    </div>
-                    <div class="list-fr-bot">策略性人才甄选和培养发展宁波知名企业研讨峰会邀请函策略性人才甄选和培养发展宁波知名企业研讨峰会邀请函...</div>
-                </div>
-            </div>
-        </div>
-        <div class="active-list-container">
-            <div class="list clearfix">
-                <div class="list-fl fl"><img class="list-fl-img" src="img/index/active-01.png" /></div>
-                <div class="list-fr fr">
-                    <div class="list-fr-top clearfix">
-                        <div class="list-fr-top-fl fl">外教老师再一次来到我们再一次来到</div>
-                        <div class="list-fr-top-fr list-fr-top-fr-js fr">已结束</div>
-                    </div>
-                    <div class="list-fr-bot">2014年4月19日苏州高新区人才专场招聘会岗位信息2014年4月19日苏州高新区人才专场招聘会岗位信息</div>
-                </div>
-            </div>
-        </div>
+    <div class="active-list" id="listItem">
+
     </div>
 
     <div class="footer-zw"></div>
@@ -126,9 +41,11 @@
 </div>
 <script src="js/jquery.min.js"></script>
 <script>
-    $(document).on("click",".active-list-container",function () {
-        window.location.href='active.html'
-    })
+    // $(document).on("click",".active-list-container",function () {
+    //     window.location.href='active.html'
+    // })
 </script>
+<script src="js2/url.js"></script>
+<script src="js2/index.js"></script>
 </body>
 </html>

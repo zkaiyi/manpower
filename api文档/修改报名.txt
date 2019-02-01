@@ -1,0 +1,9 @@
+﻿修改报名
+/ActivityInfo/SignUp/ModifySignUp
+传值
+{
+	"ID":报名人员记录的ID,
+	"Name":"名称",
+	"Duties":"职务",
+	"ContactNumber":"联系人"
+}

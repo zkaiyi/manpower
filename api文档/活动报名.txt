@@ -1,0 +1,18 @@
+活动报名
+/ActivityInfo/SignUp
+传值
+{
+	"ActivityID":活动ID,
+	"PeopleList":"[{'Name':'姓名','Duties':'职务','ContactNumber':'联系电话'}]" 报名人数组
+}
+示例
+{
+	"ActivityID":27,
+	"PeopleList":"[{'Name':'叶金波','Duties':'敲代码的','ContactNumber':'17855813651'}]"
+}
+返回值
+{
+    "Success": true,
+    "Infor": null,
+    "Msg": "报名成功！"
+}

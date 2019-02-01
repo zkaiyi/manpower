@@ -1,0 +1,16 @@
+取消报名
+/ActivityInfo/SignUp/CancelSignUp
+传值
+{
+	"ID":报名记录ID
+}
+示例
+{
+	"ID":1,
+}
+返回值
+{
+    "Success": true,
+    "Infor": null,
+    "Msg": "取消成功！"
+}
