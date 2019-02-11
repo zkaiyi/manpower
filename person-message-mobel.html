@@ -15,10 +15,10 @@
 <div class="firm-container">
     <div class="firm-top-contaienr mobel-top-contaienr">
         <div class="firm-top">
-            <div class="firm-top-01"><input class="firm-top-01-int" name="telephone" type="text" value="15906749977"></div>
+            <div class="firm-top-01"><input class="firm-top-01-int" name="telephone" type="text" value="15906749977" id="mobel"></div>
 
             <div class="mobel-yzm clearfix">
-                <div class="firm-top-01 mobel-yzm-top-01 fl"><input class="mobel-yzm-top-01-int firm-top-01-int" type="text" placeholder="验证码"></div>
+                <div class="firm-top-01 mobel-yzm-top-01 fl"><input class="mobel-yzm-top-01-int firm-top-01-int" type="text" placeholder="验证码" id="yzm"></div>
                 <input class="yzm-fr fr" id="btnSendCode" type="button" value="获取验证码" onclick="sendMessage()" />
             </div>
         </div>
@@ -26,9 +26,11 @@
     </div>
 
 
-    <div class="firm-sub">提交</div>
+    <div class="firm-sub" id="psub">提交</div>
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/person-edit.js"></script>
+<script src="js2/url.js"></script>
+<script src="js2/person-message-edit.js"></script>
 </body>
 </html>

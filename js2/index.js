@@ -1,6 +1,7 @@
 $(document).ready(function () {
     getObjectList(1,7);
-})
+    sessionStorage.setItem("active-page","1")
+});
 //亲 分页特效自己搞定哦
 function getObjectList(page,rows) {
     $.post(callurl+"/ActivityInfo/List",{Page:page,Rows:rows},function (res) {
@@ -57,6 +58,16 @@ function getObjectList(page,rows) {
         }
     })
 }
+
+
+
+
+
+
+
+
+
+
 function goToContentPage(id) {
     window.location.href='active.html?id='+id;
 }
