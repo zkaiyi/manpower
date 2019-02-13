@@ -16,10 +16,10 @@
     <div class="banner">
         <div class="banner-top">
             <img class="banner-top-img" id="imgFile" src="img/person/user.png" />
-            <input class="sz-fl-container-file" type="file" id="uppic" onchange="upimg(this)">
+            <!--<input class="sz-fl-container-file" type="file" id="uppic" onchange="upimg(this)">-->
         </div>
-        <div class="banner-name">张凯益</div>
-        <div class="banner-ip">手机：<span class="banner-ip-01">15906749977</span></div>
+        <div class="banner-name"></div>
+        <div class="banner-ip">手机：<span class="banner-ip-01"></span></div>
     </div>
 
     <div class="edit-container">
@@ -85,20 +85,21 @@
 
 </div>
 <script src="js/jquery.min.js"></script>
-<script src="js/person.js"></script>
-<script>
-    function upimg(t) {
-        var imgFile  = t.files[0];
-        var fr = new FileReader();
-        fr.onload = function(){
-            $("#imgFile").attr("src",fr.result)
-        };
-        fr.readAsDataURL(imgFile);
-    }
+<script src="js2/url.js"></script>
+<script src="js2/person.js"></script>
+<!--<script>-->
+    <!--function upimg(t) {-->
+        <!--var imgFile  = t.files[0];-->
+        <!--var fr = new FileReader();-->
+        <!--fr.onload = function(){-->
+            <!--$("#imgFile").attr("src",fr.result)-->
+        <!--};-->
+        <!--fr.readAsDataURL(imgFile);-->
+    <!--}-->
 
-    $(".bth").click(function () {
-        window.location.href='login.html';
-    })
-</script>
+    <!--$(".bth").click(function () {-->
+        <!--window.location.href='login.html';-->
+    <!--})-->
+<!--</script>-->
 </body>
 </html>

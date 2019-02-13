@@ -4,7 +4,7 @@ $(document).ready(function () {
 });
 //亲 分页特效自己搞定哦
 function getObjectList(page,rows) {
-    $.post(callurl+"/ActivityInfo/List",{Page:page,Rows:rows},function (res) {
+    $.post(callurl+"/ActivityInfo/List",{Page:page,Rows:rows,UserInfo:cookie.get("accessToken")},function (res) {
         console.log(res);
         if (res.Success){
             var listItem=$("#listItem");

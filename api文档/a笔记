@@ -12,3 +12,12 @@
 4.person-message.html-----------------需要个人信息
 
 
+ActivityInfo/SignUp/GetSignUpList    我的报名
+CompanyInfo/Info  个人信息
+
+每个接口多传一个UserInfo
+值是登录返回的infor
+
+
+
+

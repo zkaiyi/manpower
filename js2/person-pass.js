@@ -34,7 +34,8 @@ function submit() {
 
     var json = {
         OldPass:pass00,
-        NewPass:pass01
+        NewPass:pass01,
+        UserInfo:cookie.get("accessToken")
     };
 
     $.ajax({

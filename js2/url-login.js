@@ -68,12 +68,6 @@ function fileImg(formData) {
 }
 
 
-// 用户信息
-if(cookie.get("accessToken") == 0){
-    alert("登录超时，请重新登录！");
-    window.location.href='login.html'
-}
-
 
 
 

@@ -27,11 +27,10 @@ function login() {
         success:function (res) {
             console.log(res);
             console.log(res.Infor);
+            cookie.set("accessToken", res.Infor);
             if(res.Msg == "登录成功"){
                 window.location.href = 'index.html'
             }
-
-
         },
         error:function (xml) {
             console.log(xml);

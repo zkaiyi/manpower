@@ -3,7 +3,7 @@ $(document).ready(function () {
     getContentInfo(id);
 });
 function getContentInfo(id) {
-    $.post(callurl+"/ActivityInfo/Info",{ID:id},function (res) {
+    $.post(callurl+"/ActivityInfo/Info",{ID:id,UserInfo:cookie.get("accessToken")},function (res) {
         console.log(res);
         if (res.Success){
             var info=res.Infor;
@@ -44,6 +44,7 @@ function getContentInfo(id) {
             var date=time.getDate();
             var day=time.getDay();
             var hour=time.getHours();
+            var minute = time.getMinutes();
             var second=time.getSeconds();
             var t;
             // 凌晨:3:00--6:00
@@ -100,7 +101,7 @@ function getContentInfo(id) {
             if (second<10){
                 second="0"+second;
             }
-            $("#activity-time").html("活动时间："+month+"月"+date+"日（"+t1+"）"+t+" "+hour+":"+second+"");
+            $("#activity-time").html("活动时间："+month+"月"+date+"日（"+t1+"）"+t+" "+hour+":"+minute+"");
             $("#activity-place").html("活动地点："+info.Address+"");
             $("#activity-money").html("费       用："+info.Cost+" ");
             $("#apply-time").html("报名时间："+info.SSignupTime+"");
@@ -207,7 +208,8 @@ function qd1() {
         var id=getCurrentId();
         var params={
             ActivityID:id,
-            PeopleList:JSON.stringify(message)
+            PeopleList:JSON.stringify(message),
+            UserInfo:cookie.get("accessToken")
         };
         $.post(callurl+"/ActivityInfo/SignUp",params,function (res) {
             if (res.Success){
