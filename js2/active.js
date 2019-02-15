@@ -176,7 +176,7 @@ function qd() {
             showPeopleListInputs(num);
         }
     }else {
-        alert("人数不能为空！" );
+        alert("人数不能为空！");
     }
 
 }
@@ -187,7 +187,7 @@ function qd() {
 
 function qd1() {
 
-    $("#people-num").removeClass("hide")
+
 
         var list =$(".items");
         var message = [];
@@ -231,6 +231,7 @@ function qd1() {
         };
         $.post(callurl+"/ActivityInfo/SignUp",params,function (res) {
             if (res.Success){
+                $("#people-num").removeClass("hide");
                 $("#people-list").addClass("hide");
                 $(".items-container").html();
                 $(".success-wipper").removeClass("hide");
