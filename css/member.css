@@ -67,3 +67,6 @@ body{background-color: white;}
     -o-transform: translate(0,0);
     width: 100%;
 }
+
+/*0214*/
+.year-down03{max-height: 3.5rem;height: auto;}

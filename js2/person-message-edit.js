@@ -1,3 +1,26 @@
+// 获取初始信息
+var accessToken = {
+    UserInfo:cookie.get("accessToken")
+};
+$.ajax({
+    url:callurl + '/CompanyInfo/Info',
+    type:'post',
+    data:accessToken,
+    success:function (res) {
+        console.log(res);
+        $("#pmfCompany").val(res.Infor.Name);
+        $("#pmfName").val(res.Infor.Contact);
+        $("#mobel").val(res.Infor.PhoneNumber);
+
+
+    },
+    error:function (xml) {
+        console.log(xml);
+        console.log("失败");
+    }
+});
+// 获取初始信息============================
+
 // 修改企业名称
 $(document).on("click","#fsub",function () {
     var Name = $(".firm-top-01-int").val();
@@ -13,7 +36,8 @@ $(document).on("click","#fsub",function () {
     }
     var json = {
         Name:Name,
-        TradePermit:sessionStorage.getItem("file")
+        TradePermit:sessionStorage.getItem("file"),
+        UserInfo:cookie.get("accessToken")
     };
     $.ajax({
         url:callurl +'/CompanyInfo/Register/ChangeName',
@@ -22,7 +46,8 @@ $(document).on("click","#fsub",function () {
         success: function (res) {
             console.log(res);
             if(res.Msg=="提交成功,请等待审核"){
-                window.location.href='person.html'
+                alert("提交成功,请等待审核");
+                window.location.href='person-message.html'
             }
         },
         error:function (xml) {
@@ -36,7 +61,8 @@ $(document).on("click","#fsub",function () {
 $(document).on("click","#nsub",function () {
     var Name = $(".firm-top-01-int").val();
     var json = {
-        Name:Name
+        Name:Name,
+        UserInfo:cookie.get("accessToken")
 
     };
     $.ajax({
@@ -46,7 +72,8 @@ $(document).on("click","#nsub",function () {
         success: function (res) {
             console.log(res);
             if(res.Msg=="修改成功"){
-                window.location.href='person.html'
+                alert("修改成功");
+                window.location.href='person-message.html'
             }
         },
         error:function (xml) {
@@ -80,7 +107,8 @@ function sendMessage() {
         //向后台发送处理数据
         var mobel = $("#mobel").val();
         var json = {
-            mobile: mobel
+            Phone: mobel,
+            UserInfo:cookie.get("accessToken")
         };
         $.ajax({
             url:callurl +'/CompanyInfo/Register/SendCode',
@@ -123,7 +151,8 @@ $(document).on("click","#psub",function () {
     var Code=$("#yzm").val();
     var json = {
         Phone:Name,
-        Code:Code
+        Code:Code,
+        UserInfo:cookie.get("accessToken")
 
     };
     $.ajax({
@@ -133,7 +162,7 @@ $(document).on("click","#psub",function () {
         success: function (res) {
             console.log(res);
             if(res.Msg=="修改成功"){
-                window.location.href='person.html'
+                window.location.href='person-message.html'
             }
         },
         error:function (xml) {

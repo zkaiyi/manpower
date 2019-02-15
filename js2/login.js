@@ -25,11 +25,14 @@ function login() {
         type:"post",
         data:json,
         success:function (res) {
+
             console.log(res);
             console.log(res.Infor);
             cookie.set("accessToken", res.Infor);
             if(res.Msg == "登录成功"){
                 window.location.href = 'index.html'
+            }else {
+                alert(res.Msg)
             }
         },
         error:function (xml) {

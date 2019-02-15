@@ -20,8 +20,8 @@
     <div class="member-check clearfix">
         <div class="member-check-fl fl">筛选</div>
         <div class="member-check-fr fl">
-            <div class="member-check-fr-top">年份<img class="member-check-fr-top-img" src="img/person/member-dowm.png" /></div>
-            <div class="year-down year-down02 hide"></div>
+            <div class="member-check-fr-top"><span class="member-check-fr-top-span03">年份</span><img class="member-check-fr-top-img" src="img/person/member-dowm.png" /></div>
+            <div class="year-down year-down02 year-down03 hide"></div>
         </div>
     </div>
 
@@ -31,21 +31,21 @@
         <div class="item">
             <div class="item-02 clearfix">
                 <div class="item-02-list-fl fl">收件人姓名：</div>
-                <div class="item-02-list-fr fl" id="hfname">张凯益</div>
+                <div class="item-02-list-fr fl" id="hfname"></div>
             </div>
         </div>
 
         <div class="item">
             <div class="item-02 clearfix">
                 <div class="item-02-list-fl fl">收件人电话：</div>
-                <div class="item-02-list-fr fl" id="hfphone">15906749977</div>
+                <div class="item-02-list-fr fl" id="hfphone"></div>
             </div>
         </div>
 
         <div class="item">
             <div class="item-02 clearfix item-02-address">
                 <div class="item-02-list-fl fl">收件人地址：</div>
-                <div class="item-02-list-fr fl" id="hfaddress">浙江省宁波市鄞州区博纳大厦</div>
+                <div class="item-02-list-fr fl" id="hfaddress"></div>
             </div>
         </div>
 
@@ -78,14 +78,7 @@
 
 <script src="js/jquery.min.js"></script>
 <script>
-    var myDate= new Date();
-    var startYear=2008;
-    var nowYear=myDate.getFullYear();
-    for (var i=startYear;i<=nowYear;i++) {
-        var html01 = '<div class="year-down-list year-down-list01">'+i+'年</div>';
-        $(".year-down").prepend(html01);
-    };
-    
+
     $(document).on("click",".member-check-fr-top",function () {
         if($(this).siblings().hasClass("hide")){
             $(this).siblings().slideDown();
@@ -97,18 +90,11 @@
         }
     });
 
-    $(document).on("click",".year-down-list",function () {
-        var need_y = $(this).html();
-        $(".member-check-fr-top").html(need_y);
 
-        $(this).parent().slideUp();
-        $(this).parent().addClass("hide");
-
-
-    });
 
     var w03 = $(".item-02-list-fr-cl-01").width();
-    $(".firm-sz-01").css("height",w03 / 1.5795 + "px" );
+    // console.log(w03);
+    $(".item-02-list-fr-cl-01").css("height",w03 / 1.5795 + "px" );
 
     $(document).on("click",".item-02-list-fr-cl-01-img",function () {
         $(".container-zw").removeClass("hide");

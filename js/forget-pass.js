@@ -17,28 +17,26 @@ function sendMessage() {
 
 
         //向后台发送处理数据
-        // var mobel = $("#mobel").val();
-        // var json = {
-        //     mobile: mobel,
-        //     type:3
-        // };
-        // $.ajax({
-        //     url:callurl +'/common/sendMessageAnd',
-        //     type:'post',
-        //     data: JSON.stringify(json),
-        //     contentType: 'application/json',
-        //     dataType: "json",
-        //     success: function (res) {
-        //         console.log(res);
-        //     },
-        //     error:function (xml) {
-        //         console.log(xml);
-        //         if(xml.message === "请求太过频繁，请稍后再试"){
-        //             alert(xml.message);
-        //         }
-        //     }
-        //
-        // });
+        var mobel = $("#mobel").val();
+        var json = {
+            Phone: mobel
+        };
+        $.ajax({
+            url:callurl +'/CompanyInfo/Register/SendCode',
+            type:'post',
+            data: json,
+            success: function (res) {
+                console.log(res);
+
+            },
+            error:function (xml) {
+                console.log(xml);
+                if(xml.message === "请求太过频繁，请稍后再试"){
+                    alert(xml.message);
+                }
+            }
+
+        });
 
     }else{
         alert('请输入手机号码');
@@ -124,5 +122,46 @@ function submit() {
     }else {
         $("#tip5").removeClass("hide");
     }
+
+
+
+    if($(".tip").hasClass("hide")){
+
+    }else {
+        return false;
+    }
+
+    var json = {
+        Name:name,
+        Password:pass01,
+        Phone:mobel,
+        Code:yzm,
+        UserInfo:cookie.get("accessToken")
+
+    };
+
+    $.ajax({
+        url:callurl +'/CompanyInfo/Register/ForgetPass',
+        type:'post',
+        data: json,
+        success: function (res) {
+            console.log(res);
+            alert(res.Msg);
+            if(res.Msg == "修改成功"){
+                alert("已经修改成功,请重新登录");
+                window.location.href='login.html'
+
+            }else {
+                alert(res.Msg)
+            }
+        },
+        error:function (xml) {
+            console.log(xml);
+
+        }
+
+    });
+
+
 
 }

@@ -9,6 +9,20 @@ $.ajax({
         console.log(res);
         $(".banner-name").html(res.Infor.Name);
         $(".banner-ip-01").html(res.Infor.PhoneNumber);
+
+        // /person-message.html页面信息
+        $("#pmCompany").html(res.Infor.Name);
+        $("#pmName").html(res.Infor.Contact);
+        $("#pmPhone").html(res.Infor.PhoneNumber);
+
+
+
+
+
+
+
+
+
     },
     error:function (xml) {
         console.log(xml);

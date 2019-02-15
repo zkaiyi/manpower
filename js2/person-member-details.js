@@ -2,6 +2,7 @@
 
 function uploading() {
     var year=$("#year").text();
+
     console.log(year);
     var sjname=$("#sjname").val();
     var sjmobel=$("#sjmobel").val();
@@ -13,6 +14,8 @@ function uploading() {
     }else {
 
     }
+
+
 
     if(sjname){
 
@@ -51,12 +54,16 @@ function uploading() {
         return false;
     }
 
+
+
     var json = {
-        Years:year,
+        Years:year.split("年")[0],
         Recipient:sjname,
         Phone:sjmobel,
         Address:sjaddress,
-        ImgUrl:sessionStorage.getItem("file")
+        ImgUrl:sessionStorage.getItem("file"),
+        UserInfo:cookie.get("accessToken")
+
     };
 
 
@@ -70,6 +77,9 @@ function uploading() {
             if(res.Msg == "添加成功"){
                 window.location.href='person.html'
             }
+            if(res.Msg == "已存在本年度会费凭证"){
+               alert("已存在本年度会费凭证!")
+            }
 
         },
         error:function (xml) {
@@ -78,15 +88,6 @@ function uploading() {
         }
 
     });
-
-
-
-
-
-
-
-
-
 
 
 

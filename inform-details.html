@@ -30,7 +30,7 @@
 
         <div class=" news-detail-content">
             <div class="center-container">
-                <div class="news-detail-content-banner"><img class="news-detail-banner-img" src="img/inform/details.jpg" /></div>
+                <!--<div class="news-detail-content-banner"><img class="news-detail-banner-img" src="img/inform/details.jpg" /></div>-->
                 <div class="news-detail-content-art" id="content">
                 </div>
             </div>
@@ -44,16 +44,22 @@
 <script>
     $(document).ready(function () {
         var urlMap=getUrlParamToMap(decodeURI(window.location.href));
-        var title=urlMap.get("title");
-        var content=urlMap.get("content");
-        content=Base64.decode(content);
-        var time=urlMap.get("time");
-        var source=urlMap.get("source");
-        $("#title").html(title);
-        $("#source").html("信息来源："+source);
-        $("#pubTime").html("发布时间："+format(time,"yyyy-MM-dd")+" ");
-        $("#content").html(content);
+        var id=urlMap.get("id");
+        getContentInfo(id);
     })
+    function  getContentInfo(id) {
+        $.post(callurl+"/Notice/Notice/GetInfo",{id:id},function (res) {
+            var title=res.Infor.Title;
+            var content=res.Infor.NoticeContent;
+            var time=res.Infor.ReleaseTime;
+            var source=res.Infor.Source;
+            $("#title").html(title);
+            $("#source").html("信息来源："+source);
+            $("#pubTime").html("发布时间："+time.split(" ")[0]);
+            $("#content").html(content);
+        })
+    }
+
 </script>
 </body>
 </html>

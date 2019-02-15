@@ -11,14 +11,17 @@ $.ajax({
     success:function (res) {
         console.log(res);
         var list = res.Infor;
+        $("#banner_img").attr("src",list.CoverImg);
         $(".title-01").html(list.Name);
-        $(".title-02").html("阅读：" + list.ReadNum);
+        $("#yd").html("阅读：" + list.ReadNum);
         $("#zbm").html("总报名人数：" + list.SignupNum + "人");
         $("#synum").html(list.LastNum);
         $(".title02-01").html(list.ActivityContent);
 
 
-        var  activityTime = list.ActivityTime;
+
+        var  activityTime = info.ActivityTime.replace(/\-/g, '/');
+
         var time=new Date(activityTime);
         var month=time.getMonth()+1;
         var date=time.getDate();
@@ -71,10 +74,18 @@ $.ajax({
         if (second<10){
             second="0"+second;
         }
-        $("#activity-time").html("活动时间："+month+"月"+date+"日（"+t1+"）"+t+" "+hour+":"+minute+"");
+
+        var fy = list.Cost;
+        if(fy == null){
+            fy="免费"
+        }
+
+
+        $("#activity-time").html("活动时间："+list.ActivityTime+"");
         $("#activity-place").html("活动地点："+list.Address+"");
-        $("#activity-money").html("费       用："+list.Cost+" ");
+        $("#activity-money").html("费       用："+fy+" ");
         $("#apply-time").html("报名时间："+list.SSignupTime+"");
+        $("#apply-jz").html("截止时间："+list.ESignupTime+"")
 
 
     },
@@ -97,10 +108,10 @@ $(document).on("click","#qx",function () {
         success:function (res) {
             console.log(res);
             //
-            // if(res.Msg == "取消成功！"){
-            //     alert("取消成功！");
-            //     window.location.href = 'person-apply.html'
-            // }
+            if(res.Msg == "取消成功！"){
+                alert("取消成功！");
+                window.location.href = 'person-apply.html'
+            }
 
         },
         error:function (xml) {
@@ -109,3 +120,9 @@ $(document).on("click","#qx",function () {
         }
     });
 });
+
+
+// 修改的跳转链接
+$("#edit").find("a").attr("href","person-apply-details.html?ActivityID=" +id);
+
+

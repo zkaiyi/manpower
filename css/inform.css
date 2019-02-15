@@ -55,3 +55,7 @@ body{background-color:#f3f3f3; }
 .news-details-jf{width: 100%;height: 0.09rem;background-color:#ebedec; }
 .center-container {width: 90%;margin: auto;}
 
+
+/*0214*/
+.news-detail-content-art p img{width: 100%;}
+.news-detail-content-art img{width: 100%;}

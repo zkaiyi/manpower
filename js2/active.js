@@ -38,8 +38,10 @@ function getContentInfo(id) {
             $("#apply-num").html(info.SignupNum);
             $("#synum").html(info.LastNum);
             $("#content-info").html(info.ActivityContent);
-            var  activityTime = info.ActivityTime;
+            var  activityTime = info.ActivityTime.replace(/\-/g, '/');
             var time=new Date(activityTime);
+
+            console.log(time);
             var month=time.getMonth()+1;
             var date=time.getDate();
             var day=time.getDay();
@@ -101,10 +103,26 @@ function getContentInfo(id) {
             if (second<10){
                 second="0"+second;
             }
-            $("#activity-time").html("活动时间："+month+"月"+date+"日（"+t1+"）"+t+" "+hour+":"+minute+"");
+            var fy = info.Cost;
+            if(fy == null){
+                fy="免费"
+            }
+
+            var ActivityTime = info.ActivityTime;
+            var ActivityTime01 = ActivityTime.split("-")[1].split("0")[1];
+            var ActivityTime02 = ActivityTime.split("-")[2].split(" ")[0];
+            var ActivityTime03 = ActivityTime.split("-")[2].split(" ")[1].split(":");
+
+
+
+
+
+            console.log(ActivityTime03);
+            $("#activity-time").html("活动时间："+info.ActivityTime+"");
             $("#activity-place").html("活动地点："+info.Address+"");
-            $("#activity-money").html("费       用："+info.Cost+" ");
+            $("#activity-money").html("费       用："+fy+" ");
             $("#apply-time").html("报名时间："+info.SSignupTime+"");
+            $("#apply-jz").html("截止时间："+info.ESignupTime+"")
         }else{
             alert(res.Msg);
         }
@@ -113,9 +131,7 @@ function getContentInfo(id) {
 
 function showPeopleListInputs(num){
     $("#people-num").addClass("hide").removeClass("tcc-wapper-add");
-    setTimeout(function () {
-        $("#people-num").removeClass("hide")
-    },10);
+
     $("#people-list").removeClass("hide");
     for(var i=0;i<num;i++){
         var html = ' <div class="items">\n' +
@@ -170,6 +186,8 @@ function qd() {
 
 
 function qd1() {
+
+    $("#people-num").removeClass("hide")
 
         var list =$(".items");
         var message = [];

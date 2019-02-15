@@ -3,7 +3,7 @@ $(document).ready(function () {
     getObjectList();
 });
 function getObjectList(){
-    $.post(callurl+"/Notice/Notice/GetList",{type:0},function (res) {
+    $.post(callurl+"/Notice/Notice/GetList",{type:1},function (res) {
         var infoList=$("#list");
         console.log(res);
         if (res.Success){
@@ -29,7 +29,7 @@ function getObjectList(){
 
                 temp=temp.replace("[id]",id).replace("[title]",title).replace("[content]",content).replace("[time]",time);
                 infoList.append(temp);
-
+                map.set(id,list[index]);
             }
         }else{
             alert(res.Msg);
