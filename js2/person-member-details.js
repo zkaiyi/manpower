@@ -54,8 +54,6 @@ function uploading() {
         return false;
     }
 
-
-
     var json = {
         Years:year.split("年")[0],
         Recipient:sjname,
@@ -74,6 +72,7 @@ function uploading() {
         data: json,
         success: function (res) {
             console.log(res);
+            alert(res.Msg);
             if(res.Msg == "添加成功"){
                 window.location.href='person.html'
             }

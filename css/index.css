@@ -25,3 +25,6 @@
 .list{cursor: pointer;}
 .list-fr-top-fr-wks{background-color: #b5b5b5;}
 
+/*0218*/
+.list-fl{height: 1.5rem;overflow: hidden;}
+.list{height: 1.5rem;}

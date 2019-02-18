@@ -12,7 +12,7 @@ $.ajax({
         var list = res.Infor;
         console.log(list);
         for(var i in list){
-            var html = '<div class="apply" data-applyId="'+list[i].ActivityID+'" data-Id="'+list[i].ID+'">\n' +
+            var html = '<div class="apply" data-applyId="'+list[i].ActivityID+'" data-Id="'+list[i].ID+'" >\n' +
                 '            <div class="apply-01"><span class="apply-01-span">【报名成功】</span><span class="apply-03-span">'+list[i].ActivityName+'</span></div>\n' +
                 '            <div class="apply-02">&nbsp;&nbsp;报名时间：<span class="apply-02-span">'+list[i].AddTime+'</span></div>\n' +
                 '        </div>'

@@ -13,7 +13,7 @@ function getObjectList(page,rows) {
             for (index in list){
                 var temp='<div class="active-list-container" onclick="goToContentPage([id])">\n' +
                     '            <div class="list clearfix">\n' +
-                    '                <div class="list-fl fl"><img class="list-fl-img"  onerror="this.src=\'img/index/active-01.png\'" src="[image]" /></div>\n' +
+                    '                <div class="list-fl fl"><img class="list-fl-img"  onerror="this.src=\'img/index/banner.jpg\'" src="[image]" /></div>\n' +
                     '                <div class="list-fr fr">\n' +
                     '                    <div class="list-fr-top clearfix">\n' +
                     '                        <div class="list-fr-top-fl fl">[title]</div>\n' +

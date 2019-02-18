@@ -1,7 +1,8 @@
 var id = window.location.href.split("ActivityID=")[1];
 var json = {
     UserInfo:cookie.get("accessToken"),
-    ID:id
+    ID:id,
+    RecordID:sessionStorage.getItem("person-apply-content-qxId")
 };
 
 $.ajax({

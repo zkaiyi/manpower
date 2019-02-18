@@ -13,3 +13,5 @@
 .item-yzm-input{    margin-left: 8.58%;}
 .submit-container{padding-bottom: 0.89rem;}
 .submit{width: 100%;height:0.9rem;line-height: 0.9rem;background-color: #5197ff;color: white;text-align: center; font-size: 0.48rem;border-radius: 0.1rem;margin-top: 0.6rem;font-size: 0.36rem;}
+/*02.18*/
+.submit{cursor: pointer;}

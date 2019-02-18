@@ -59,3 +59,9 @@ body{background-color:#f3f3f3; }
 /*0214*/
 .news-detail-content-art p img{width: 100%;}
 .news-detail-content-art img{width: 100%;}
+/*0218*/
+.list-container-fr-container-t2{font-size: 0.26rem;}
+.list-container-fr-container-t3{font-size: 0.24rem;}
+.news-detail-content-art{font-size: 0.3rem;}
+.news-detail-content-art{    margin-top:0;letter-spacing: 1px;}
+.news-detail-content-art img{margin-top: 0.2rem;}

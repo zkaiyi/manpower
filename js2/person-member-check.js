@@ -33,10 +33,11 @@ function getall() {
                 $(".member-check-fr-top").html("暂无缴费记录")
 
             }else {
+
+                $(".member-check-fr-top-span03").html(sessionStorage.getItem("chechYears"));
                 sessionStorage.removeItem("checkshow");
 
                 for(var i in list){
-
                     array.push(list[i].Years)
                 }
 

@@ -8,7 +8,7 @@ function sendMessage() {
     var mobile = /^(((11[0-9]{1})|(12[0-9]{1})|(13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(16[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
 
 
-    if(telephone && mobile.test(telephone)){
+    if(checkTEL(telephone)){
         curCount = count;
         //设置button效果，开始计时
         $("#btnSendCode").attr("disabled", "true");
@@ -39,7 +39,7 @@ function sendMessage() {
         });
 
     }else{
-        alert('请输入手机号码');
+        alert('请检查手机格式');
         $("[name='telephone']").focus();
         return false;
     }
@@ -124,12 +124,32 @@ function submit() {
     }
 
 
-
-    if($(".tip").hasClass("hide")){
-
-    }else {
+    if(!$("#tip1").hasClass("hide")){
         return false;
     }
+
+    if(!$("#tip2").hasClass("hide")){
+        return false;
+    }
+
+
+    if(!$("#tip3").hasClass("hide")){
+        return false;
+    }
+
+
+    if(!$("#tip4").hasClass("hide")){
+        return false;
+    }
+
+    if(!$("#tip4").hasClass("hide")){
+        return false;
+    }
+
+
+
+
+
 
     var json = {
         Name:name,
@@ -148,16 +168,11 @@ function submit() {
             console.log(res);
             alert(res.Msg);
             if(res.Msg == "修改成功"){
-                alert("已经修改成功,请重新登录");
                 window.location.href='login.html'
-
-            }else {
-                alert(res.Msg)
             }
         },
         error:function (xml) {
             console.log(xml);
-
         }
 
     });

@@ -46,7 +46,10 @@ function submit() {
             console.log(res);
             alert(res.Msg);
             if(res.Msg == "修改成功"){
-                window.location.href = 'login.html'
+                sessionStorage.clear();
+                window.location.href = 'login.html';
+                cookie.deleteAll();
+
             }
         },
         error:function (xml) {

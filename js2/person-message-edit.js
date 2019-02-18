@@ -22,7 +22,8 @@ $.ajax({
 // 获取初始信息============================
 
 // 修改企业名称
-$(document).on("click","#fsub",function () {
+function fsub() {
+    alert("1111");
     var Name = $(".firm-top-01-int").val();
     // 上传材料
     var pic = $("#uppic")[0].files[0];
@@ -31,8 +32,10 @@ $(document).on("click","#fsub",function () {
     fileImg(formData);
     if(!pic){
         pic =$("#imgFile").attr("src");
-        alert("请上传材料证明");
         return false;
+    }
+    if(!Name){
+        alert("姓名不能为空")
     }
     var json = {
         Name:Name,
@@ -45,7 +48,7 @@ $(document).on("click","#fsub",function () {
         data: json,
         success: function (res) {
             console.log(res);
-            if(res.Msg=="提交成功,请等待审核"){
+            if(res.Msg == "提交成功,请等待审核"){
                 alert("提交成功,请等待审核");
                 window.location.href='person-message.html'
             }
@@ -56,9 +59,9 @@ $(document).on("click","#fsub",function () {
         }
 
     });
-});
+}
 // 修改名称
-$(document).on("click","#nsub",function () {
+function nsub() {
     var Name = $(".firm-top-01-int").val();
     var json = {
         Name:Name,
@@ -82,11 +85,22 @@ $(document).on("click","#nsub",function () {
         }
 
     });
-});
+}
 
 // 修改手机号
 // 修改手机号码
 // 发送短信验证码
+
+function checkTEL(tel) {
+    if (tel.search(/^(((11[0-9]{1})|(12[0-9]{1})|(13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(16[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/)!= -1){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
 var InterValObj; //timer变量，控制时间
 var count = 60; //间隔函数，1秒执行
 var curCount;//当前剩余秒数
@@ -96,7 +110,9 @@ function sendMessage() {
     var mobile = /^(((11[0-9]{1})|(12[0-9]{1})|(13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(16[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
 
 
-    if(telephone && mobile.test(telephone)){
+    // if(telephone && mobile.test(telephone)){
+    if(checkTEL(telephone)){
+
         curCount = count;
         //设置button效果，开始计时
         $("#btnSendCode").attr("disabled", "true");
@@ -126,7 +142,7 @@ function sendMessage() {
 
         });
     }else{
-        alert('请输入手机号码');
+        alert('请检查手机格式');
         $("[name='telephone']").focus();
         return false;
     }
@@ -145,8 +161,7 @@ function SetRemainTime() {
     }
 }
 
-
-$(document).on("click","#psub",function () {
+function psub() {
     var Name = $(".firm-top-01-int").val();
     var Code=$("#yzm").val();
     var json = {
@@ -155,12 +170,18 @@ $(document).on("click","#psub",function () {
         UserInfo:cookie.get("accessToken")
 
     };
+
+    if(!Code){
+        alert("请输入验证码");
+        return false;
+    }
     $.ajax({
         url:callurl +'/CompanyInfo/Register/ChangePhone',
         type:'post',
         data: json,
         success: function (res) {
             console.log(res);
+            alert(res.Msg);
             if(res.Msg=="修改成功"){
                 window.location.href='person-message.html'
             }
@@ -171,5 +192,6 @@ $(document).on("click","#psub",function () {
         }
 
     });
-});
+}
+
 

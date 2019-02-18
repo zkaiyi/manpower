@@ -39,7 +39,7 @@
     </div>
 </div>
 <script src="js/jquery.min.js"></script>
-<script src="js2/url.js"></script>
+<script src="js2/url-login.js"></script>
 <script src="js2/util.js"></script>
 <script>
     $(document).ready(function () {
@@ -54,6 +54,9 @@
             var time=res.Infor.ReleaseTime;
             var source=res.Infor.Source;
             $("#title").html(title);
+            if(source == null){
+                source = " "
+            }
             $("#source").html("信息来源："+source);
             $("#pubTime").html("发布时间："+time.split(" ")[0]);
             $("#content").html(content);
