@@ -112,7 +112,7 @@
                 success:function (res) {
 
                     console.log(res);
-                    if(res.Infor.StatusName  == "待审核" ){
+                    if(res.Infor.Status > 0 ){
                         alert("该用户还在审核过程中")
                     }else {
                         $(".tcc-zz").removeClass("hide");

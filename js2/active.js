@@ -1,3 +1,15 @@
+document.body.addEventListener('focusin', function () {
+    // 弹出
+    $(".tcc-wapper").css("position","absolute");
+    
+});
+
+document.body.addEventListener('focusout', function(){
+    // 下去
+    $(".tcc-wapper").css("position","absolute");
+});
+
+
 $(document).ready(function () {
     var id=getCurrentId();
     getContentInfo(id);
