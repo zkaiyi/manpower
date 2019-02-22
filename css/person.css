@@ -46,3 +46,8 @@ body{background-color: #f5f5f5;}
 .apply-details-list:nth-child(n+2){margin-top: 0.11rem;}
 .bth{cursor: pointer;}
 
+
+/*0222*/
+/*我的报名*/
+.apply-contaienr-zw{text-align: center;}
+.apply-contaienr-zw-t{font-size: 0.48rem;color: #bfbfbf;text-align: center;}

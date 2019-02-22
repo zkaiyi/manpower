@@ -14,9 +14,23 @@ $.ajax({
         $("#banner_img").attr("src",list.CoverImg);
         $(".title-01").html(list.Name);
         $("#yd").html("阅读：" + list.ReadNum);
-        $("#zbm").html("总报名人数：" + list.SignupNum + "人");
+        $("#zbm").html("总报名数：" + list.SignupNum + "");
         $("#synum").html(list.LastNum);
         $(".title02-01").html(list.ActivityContent);
+
+
+        var fy = list.Cost;
+        if(fy == null){
+            fy="免费"
+        }
+
+        $("#activity-time").html(list.ActivityTime);
+        $("#activity-place").html(list.Address);
+        $("#activity-money").html(fy);
+        $("#apply-time").html(list.SSignupTime);
+        $("#apply-jz").html(list.ESignupTime)
+
+
 
 
 

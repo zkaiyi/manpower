@@ -8,129 +8,137 @@ function getContentInfo(id) {
         if (res.Success){
             var info=res.Infor;
 
-            if(info.IsSignUp == true){
-                window.location.href='person-apply-content.html?ActivityID=' + id;
-            }else {
+            sessionStorage.setItem("MaxLimitNum",info.MaxLimitNum);
 
 
-                // 判断活动时间是否结束
-                var jdata = new Date();
-                var activedata = new Date(info.ESignupTime);
-                var startdata = new Date(info.SSignupTime);
-                var time1 = jdata.getTime();
-                var time2 = activedata.getTime();
-                var time3 = startdata.getTime();
-                if(time1 > time2 ){
-                    $(".active-sub").html("活动已结束").css("background-color","#b5b5b5");
-                }
+          if(info.IsSignUp == true){
+              window.location.href='person-apply-content.html?ActivityID=' + id;
+              sessionStorage.setItem("person-apply-content-qxId",info.RecordID)
 
-                if(time1 < time3 ){
-                    $(".active-sub").html("还未开始").css("background-color","#b5b5b5");
-                }
-
-                if(info.LastNum === 0){
-                    $(".active-sub").html("名额已满").css("background-color","#f8b551");
-                }
+          }
 
 
 
 
-
-                $("#cover-img").attr("src",info.CoverImg);
-                $("#content-title").html(info.Name);
-                $("#read-num").html(info.ReadNum);
-                $("#apply-num").html(info.SignupNum);
-                $("#synum").html(info.LastNum);
-                $("#content-info").html(info.ActivityContent);
-                var  activityTime = info.ActivityTime.replace(/\-/g, '/');
-                var time=new Date(activityTime);
-
-                console.log(time);
-                var month=time.getMonth()+1;
-                var date=time.getDate();
-                var day=time.getDay();
-                var hour=time.getHours();
-                var minute = time.getMinutes();
-                var second=time.getSeconds();
-                var t;
-                // 凌晨:3:00--6:00
-                // 早晨:6:00---8:00
-                // 上午:8:00--11:00
-                // 中午:11:00--13:00
-                // 下午:13:00--17:00
-                // 傍晚:17:00--19:00
-                // 晚上:19:00--23:00
-                // 深夜:23:00--3:00
-
-
-
-
-                if (hour>=3&&hour<6){
-                    t="凌晨";
-                }else if (hour>=6&&hour<8){
-                    t="早晨";
-                } else if (hour>=8&&hour<11){
-                    t="上午";
-                }else if (hour>=11&&hour<13){
-                    t="中午";
-                }else if (hour>=13&&hour<17){
-                    t="下午";
-                }else if (hour>=17&&hour<19){
-                    t="傍晚";
-                }else if (hour>=19&&hour<23){
-                    t="晚上";
-                }else{
-                    t="深夜";
-                }
-                if (hour>12){
-                    hour=hour-12;
-                }
-                var t1;
-                if (day==0){
-                    t1="周日";
-                } else if (day==1){
-                    t1="周一";
-                } else if (day==2){
-                    t1="周二";
-                }else if (day==3){
-                    t1="周三";
-                }else if (day==4){
-                    t1="周四";
-                }else if (day==5){
-                    t1="周五";
-                }else if (day==6){
-                    t1="周六";
-                }
-                if (hour<10){
-                    hour="0"+hour;
-                }
-                if (second<10){
-                    second="0"+second;
-                }
-                var fy = info.Cost;
-                if(fy == null){
-                    fy="免费"
-                }
-
-                var ActivityTime = info.ActivityTime;
-                var ActivityTime01 = ActivityTime.split("-")[1].split("0")[1];
-                var ActivityTime02 = ActivityTime.split("-")[2].split(" ")[0];
-                var ActivityTime03 = ActivityTime.split("-")[2].split(" ")[1].split(":");
-
-
-
-
-
-                console.log(ActivityTime03);
-                $("#activity-time").html("活动时间："+info.ActivityTime+"");
-                $("#activity-place").html("活动地点："+info.Address+"");
-                $("#activity-money").html("费       用："+fy+" ");
-                $("#apply-time").html("报名时间："+info.SSignupTime+"");
-                $("#apply-jz").html("截止时间："+info.ESignupTime+"")
-
-
-
+            // 判断活动时间是否结束
+            var jdata = new Date();
+            var activedata = new Date(info.ESignupTime);
+            var startdata = new Date(info.SSignupTime);
+            var time1 = jdata.getTime();
+            var time2 = activedata.getTime();
+            var time3 = startdata.getTime();
+            if(time1 > time2 ){
+                $(".active-sub").html("活动已结束").css("background-color","#b5b5b5");
             }
+
+            if(time1 < time3 ){
+                $(".active-sub").html("还未开始").css("background-color","#b5b5b5");
+            }
+
+            if(info.LastNum === 0){
+                $(".active-sub").html("名额已满").css("background-color","#f8b551");
+            }
+
+
+
+
+
+
+
+            $("#cover-img").attr("src",info.CoverImg);
+            $("#content-title").html(info.Name);
+            $("#read-num").html(info.ReadNum);
+            $("#apply-num").html(info.SignupNum);
+            $("#synum").html(info.LastNum);
+            $("#content-info").html(info.ActivityContent);
+            var  activityTime = info.ActivityTime.replace(/\-/g, '/');
+            var time=new Date(activityTime);
+
+            console.log(time);
+            var month=time.getMonth()+1;
+            var date=time.getDate();
+            var day=time.getDay();
+            var hour=time.getHours();
+            var minute = time.getMinutes();
+            var second=time.getSeconds();
+            var t;
+            // 凌晨:3:00--6:00
+            // 早晨:6:00---8:00
+            // 上午:8:00--11:00
+            // 中午:11:00--13:00
+            // 下午:13:00--17:00
+            // 傍晚:17:00--19:00
+            // 晚上:19:00--23:00
+            // 深夜:23:00--3:00
+
+
+
+
+            if (hour>=3&&hour<6){
+                t="凌晨";
+            }else if (hour>=6&&hour<8){
+                t="早晨";
+            } else if (hour>=8&&hour<11){
+                t="上午";
+            }else if (hour>=11&&hour<13){
+                t="中午";
+            }else if (hour>=13&&hour<17){
+                t="下午";
+            }else if (hour>=17&&hour<19){
+                t="傍晚";
+            }else if (hour>=19&&hour<23){
+                t="晚上";
+            }else{
+                t="深夜";
+            }
+            if (hour>12){
+                hour=hour-12;
+            }
+            var t1;
+            if (day==0){
+                t1="周日";
+            } else if (day==1){
+                t1="周一";
+            } else if (day==2){
+                t1="周二";
+            }else if (day==3){
+                t1="周三";
+            }else if (day==4){
+                t1="周四";
+            }else if (day==5){
+                t1="周五";
+            }else if (day==6){
+                t1="周六";
+            }
+            if (hour<10){
+                hour="0"+hour;
+            }
+            if (second<10){
+                second="0"+second;
+            }
+            var fy = info.Cost;
+            if(fy == null){
+                fy="免费"
+            }
+
+            var ActivityTime = info.ActivityTime;
+            var ActivityTime01 = ActivityTime.split("-")[1].split("0")[1];
+            var ActivityTime02 = ActivityTime.split("-")[2].split(" ")[0];
+            var ActivityTime03 = ActivityTime.split("-")[2].split(" ")[1].split(":");
+
+
+
+
+
+            console.log(ActivityTime03);
+            $("#activity-time").html(info.ActivityTime);
+            $("#activity-place").html(info.Address);
+            $("#activity-money").html(fy);
+            $("#apply-time").html(info.SSignupTime);
+            $("#apply-jz").html(info.ESignupTime)
+
+
+
 
 
 
@@ -174,23 +182,30 @@ function showPeopleListInputs(num){
 }
 
 
+// 报名人数
 function qd() {
-    var synum = $("#synum").text();
-    console.log(synum);
-
+    var MaxLimitNum = sessionStorage.getItem("MaxLimitNum");
     var num = $("#num").val();
-    console.log(num);
     if(num){
-        if(num > synum){
-            alert("最多不能超过" +synum + "人！" );
+
+
+        if(num  - MaxLimitNum > 0){
+            alert("最多不能超过" + MaxLimitNum + "人！" );
+        }else if(num === "0"){
+            alert("人数不能为0！");
         }else {
             showPeopleListInputs(num);
         }
+
+
     }else {
         alert("人数不能为空！");
     }
 
 }
+
+
+
 
 
 

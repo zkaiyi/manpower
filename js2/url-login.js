@@ -1,4 +1,4 @@
-var callurl = "http://rlzyapi.imengxin.me";
+var callurl = "http://rlzy.zxtop.cn/api";
 
 
 var cookie = {

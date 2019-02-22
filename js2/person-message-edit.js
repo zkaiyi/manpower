@@ -23,7 +23,7 @@ $.ajax({
 
 // 修改企业名称
 function fsub() {
-    alert("1111");
+    // alert("1111");
     var Name = $(".firm-top-01-int").val();
     // 上传材料
     var pic = $("#uppic")[0].files[0];
