@@ -30,7 +30,7 @@ var cookie = {
     },
     deleteAll: function () { //删除cookie方法
         var date=new Date();
-        date.setTime(date.getTime()-10000);
+        date.setTime(date.getTime()-100000000);
         var keys=document.cookie.match(/[^ =;]+(?=\=)/g);
         if (keys) {
             for (var i =  keys.length; i--;)
@@ -41,6 +41,9 @@ var cookie = {
 
 
 };
+
+
+
 
 
 // 上传图片
@@ -70,10 +73,6 @@ function fileImg(formData) {
 
 // 用户信息
 var cookid_per = cookie.get("accessToken");
-if(cookid_per == 0){
-    alert("登录超时，请重新登录！");
-    window.location.href='login.html'
-}
 if(!cookid_per){
     alert("登录超时，请重新登录！");
     window.location.href='login.html'

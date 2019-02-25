@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/foget-pass.css" />
     <link rel="stylesheet" href="css/active.css" />
     <script src="js/font.js"></script>
-    <title>活动</title>
+    <title>活动报名</title>
     <style>
         body{background-color:#f1f1f1; }
     </style>
@@ -51,7 +51,7 @@
 <div class="tcc-zz hide"></div>
 
 <!--填写报名人数-->
-<div class="tcc-wapper" id="people-num">
+<div class="tcc-wapper hide" id="people-num">
     <div class="tcc-wapper-title clearfix"><div class="tcc-wapper-title-span fl"></div>填写报名人数</div>
 
     <div class="tcc-wapper-item">
@@ -116,7 +116,11 @@
                         alert("该用户还在审核过程中")
                     }else {
                         $(".tcc-zz").removeClass("hide");
-                        $(".tcc-wapper").addClass("tcc-wapper-add");
+                        $("#people-num").removeClass("hide");
+                        setTimeout(function () {
+                            $(".tcc-wapper").addClass("tcc-wapper-add");
+                        },10);
+
 
                         $("html").css({
                             overflow:"hidden",
@@ -128,15 +132,6 @@
                             height:"100%"
                         })
                     }
-
-
-
-
-
-
-
-
-
 
 
                 },
@@ -161,6 +156,7 @@
         $(".tcc-zz").addClass("hide");
         $(".tcc-wapper").removeClass("tcc-wapper-add");
         $("#people-list").addClass("hide");
+        $("#people-num").addClass("hide");
         $(".items-container").html("");
         $(".success-wipper").addClass("hide");
 
@@ -174,7 +170,7 @@
             height:"auto"
         })
 
-        $("#people-num").removeClass("hide")
+        // $("#people-num").removeClass("hide")
     })
 
  </script>

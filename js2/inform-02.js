@@ -37,6 +37,6 @@ function getObjectList(){
     });
 }
 function goToContent(id) {
-    var url="inform-details.html?id="+id;
+    var url="inform-details02.html?id="+id;
     window.location.href=encodeURI(url);
 }

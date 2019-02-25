@@ -1,3 +1,24 @@
+// 清除所有的cookie
+function deleteCookie() {
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+    }
+    if(cookies.length > 0)
+    {
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            var eqPos = cookie.indexOf("=");
+            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            var domain = location.host.substr(location.host.indexOf('.'));
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=" + domain;
+        }
+    }
+}
+
 // 验证
 function submit() {
     var pass00 = $("#pass00").val();
@@ -47,9 +68,8 @@ function submit() {
             alert(res.Msg);
             if(res.Msg == "修改成功"){
                 sessionStorage.clear();
+                deleteCookie();
                 window.location.href = 'login.html';
-                cookie.deleteAll();
-
             }
         },
         error:function (xml) {

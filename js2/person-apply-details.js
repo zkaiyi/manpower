@@ -14,7 +14,7 @@ $.ajax({
         var list = res.Infor;
         for(var i in list){
             var html='<div class="apply-details-list">\n' +
-                '        <div class="apply-details-list-01"><span class="apply-details-list-01-span01">【报名成功】</span><span class="apply-details-list-01-span02">'+list[i].ActivityName+'</span></div>\n' +
+                '        <div class="apply-details-list-01 clearfix"><span class="apply-details-list-01-span01 fl">【报名成功】</span><span class="apply-details-list-01-span02 fr">'+list[i].ActivityName+'</span></div>\n' +
                 '        <div class="apply-details-list-container">\n' +
                 '\n' +
                 '            <div class="apply-details-list-container-list clearfix">\n' +

@@ -22,20 +22,10 @@
     -o-transition: all 0.4s ease-in 0.02s;
     -moz-transition:  all 0.4s ease-in 0.02s;
     background-color: white;width: 93.6%;margin: auto;height: 5.49rem;position: fixed;z-index: 666;top: 25%;left: 3.2%;overflow: hidden;top: 100%;
-    /*transform:  translate(0,300%);*/
-    /*-webkit-transform: translate(0,300%);*/
-    /*-moz-transform:  translate(0,300%);*/
-    /*-o-transform: translate(0,300%);*/
-    /*-ms-transform:   translate(0,300%);*/
     border-radius: 0.2rem;
 }
 .tcc-wapper-add{
     top: 25%;
-    /*transform:  translate(0,0);*/
-    /*-webkit-transform:translate(0,0);*/
-    /*-moz-transform:  translate(0,0);*/
-    /*-o-transform: translate(0,0);*/
-    /*-ms-transform:   translate(0,0);*/
 }
 .tcc-wapper-title{width:100%;background-color: #5197ff;height: 1rem;line-height: 1rem;color: white;font-size: 0.36rem; }
 .tcc-wapper-title-span{display: inline-block;width:0.08rem;height: 0.36rem;background-color: white;border-radius: 0.1rem;margin-left: 4.205%;margin-right:0.19rem; margin-top: 0.32rem; }
@@ -92,3 +82,14 @@
 .title02-03{font-size: 0.26rem;}
 .title-01{font-size: 0.48rem;    line-height: 0.7rem;font-weight: normal;}
 #synum{color: red;}
+body{position: relative;}
+.tcc-zz{position: absolute;}
+#people-list{position: absolute;}
+#success-wipper{position: absolute;}
+#people-num{position: absolute;}
+.tcc-wapper{
+    transition: top 0.4s ease-in 0.02s;
+    -webkit-transition:  top 0.4s ease-in 0.02s;
+    -o-transition: top 0.4s ease-in 0.02s;
+    -moz-transition:  top 0.4s ease-in 0.02s;
+}

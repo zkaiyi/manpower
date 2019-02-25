@@ -1,13 +1,15 @@
-document.body.addEventListener('focusin', function () {
-    // 弹出
-    $(".tcc-wapper").css("position","absolute");
-    
-});
-
-document.body.addEventListener('focusout', function(){
-    // 下去
-    $(".tcc-wapper").css("position","absolute");
-});
+// document.body.addEventListener('focusin', function () {
+//     // 弹出
+//     // alert("111");
+//     $("#people-num").css("position","absolute");
+//
+// });
+//
+// document.body.addEventListener('focusout', function(){
+//     // 下去
+//     // alert("222");
+//     $("#people-num").css("position","fixed");
+// });
 
 
 $(document).ready(function () {
@@ -269,7 +271,7 @@ function qd1() {
         };
         $.post(callurl+"/ActivityInfo/SignUp",params,function (res) {
             if (res.Success){
-                $("#people-num").removeClass("hide");
+                // $("#people-num").removeClass("hide");
                 $("#people-list").addClass("hide");
                 $(".items-container").html();
                 $(".success-wipper").removeClass("hide");
