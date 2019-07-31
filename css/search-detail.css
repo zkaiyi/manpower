@@ -1,0 +1,26 @@
+.s-header-content-s{margin-top: 0.4rem;}
+
+/*.main-list-3{background-image: url("../img/search/icon-02.png");background-size: 100% 100%;*/
+    /*background-repeat: no-repeat;font-size: 0.24rem;color: #f8a811;line-height: 0.38rem;padding-left: 0.14rem;padding-right:0.14rem;margin-top: 0.2rem;margin-left: 0.18rem;*/
+    /*margin-bottom: 0.2rem;}*/
+.main-detail{width: 95%;margin-left: 5%;}
+.main-list{line-height: 0.73rem;padding-top: 0.15rem;color: #333333;font-size: 0.3rem;border-bottom: 1px solid #c7c7c7;position: relative;}
+.main-list-fl{width: 0.05rem;height: 0.05rem;background-color:#5d5d5d;margin-top: 0.3rem;margin-right: 3px;}
+.main-list-2{position: relative;width: 70%;}
+
+
+.main-list-3{;background-size: 100% 100%;border: 1px solid #f8a811;border-radius: 0.1rem;
+    background-repeat: no-repeat;font-size: 0.24rem;color: #f8a811;line-height: 0.38rem;padding-left: 0.14rem;padding-right:0.14rem;margin-top: 0.2rem;margin-left: 0.18rem;
+    margin-bottom: 0.2rem;}
+.main-list-401{    background-size: 100% 100%;
+    border: 1px solid #f8a811;
+    border-radius: 0.1rem;
+    background-repeat: no-repeat;
+    font-size: 0.24rem;
+    color: #f8a811;
+    line-height: 0.38rem;
+    padding-left: 0.14rem;
+    padding-right: 0.14rem;
+    margin-top: 0.2rem;
+    margin-left: 0.18rem;
+    margin-bottom: 0.2rem;}

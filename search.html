@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>协会查询</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/search.css" />
+    <script src="js/font.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="s-header">
+        <img class="s-header-img" src="img/search/img.jpg" />
+        <div class="s-header-content">
+            <div class="s-header-content-top">协会会员名单查询</div>
+            <div class="s-header-content-s clearfix">
+                <div class="s-s-01 fl"><img class="s-s-01-img" src="img/search/icon.png" /></div>
+                <div class="s-s-02 fl"><input class="s-s-02-int" placeholder="请输入协会会员名称" type="text"></div>
+                <div class="s-s-03 fr">搜索</div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="main">
+
+        <!--<div class="main-list">-->
+            <!--<div class="main-l-title clearfix"><span class="main-l-title-span">会长</span><span class="main-l-title-span02 fr">more+</span></div>-->
+            <!--<div class="main-l-item clearfix">-->
+                <!--<div class="main-l-item-fl fl">均胜集团有限公司</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="main-list">-->
+            <!--<div class="main-l-title clearfix"><span class="main-l-title-span">副会长</span><span class="main-l-title-span02 fr">more+</span></div>-->
+            <!--<div class="main-l-item clearfix">-->
+                <!--<div class="main-l-item-fl fl">均胜集团有限均胜集团有限公司公司</div>-->
+                <!--<div class="main-l-item-fl fl">均胜集团有限均胜集团有限公司公司</div>-->
+                <!--<div class="main-l-item-fl fl">均胜集团有均胜集团有限公司限公司</div>-->
+                <!--<div class="main-l-item-fl fl">均胜集团有限公司</div>-->
+                <!--<div class="main-l-item-fl fl">均胜集团有限公司</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+
+
+    </div>
+</div>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js2/url-login.js"></script>
+<script>
+    $.ajax({
+        url: callurl + "/CompanyInfo/Info/GetXHList",
+        type: "post",
+        dataType: "JSON",
+        success:function(res) {
+            console.log(res);
+            for(var i = 0;i<res.length;i++){
+                var list = res[i].List;
+                var children = "";
+                var listLen = list.length;
+                var a_class = "main-l-title-span02-hide";
+                if(listLen > 6){
+                    listLen=6;
+
+                }
+                a_class = "";
+                for(var j =0;j<listLen;j++){
+                    children += ' <div class="main-l-item-fl fl">'+list[j].Name+'</div>'
+                }
+                var html = '<div class="main-list">\n' +
+                    '            <div class="main-l-title clearfix"><span class="main-l-title-span">'+res[i].Name+'</span><span class="main-l-title-span02 fr '+a_class+'" data-text="'+res[i].Name+'">more+</span></div>\n' +
+                    '            <div class="main-l-item clearfix">'+children+'</div>\n' +
+                    '        </div>'
+
+
+                $(".main").append(html)
+            }
+
+        },
+        error:function(xml){
+            console.log(xml);
+        }
+    });
+
+
+    // 更多
+    $(document).on("click",".main-l-title-span02",function () {
+        var Duties = $(this).attr("data-text");
+        window.location.href='search-detail.html?Duties='+encodeURI(Duties)
+    })
+
+    // 搜索
+    $(document).on("click",".s-s-03",function () {
+        var Name = $(".s-s-02-int").val();
+        if(Name == ""){
+            alert("请输入协会会员名称")
+        }else {
+            window.location.href='search-detail.html?Name='+encodeURI(Name)
+        }
+    })
+
+
+</script>
+</body>
+</html>

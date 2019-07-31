@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/member.css" />
+    <script src="js/font.js"></script>
+    <title>退会申请</title>
+    <style>
+        body{background-color: white;}
+        .container{padding-bottom: 0.55rem;}
+        .member-art-02-span {color: #ff3434;}
+        .member-art-02 a{text-decoration: none;}
+        .member-next{border-radius:1rem;}
+        .item-02 {width: 80%;margin: auto;margin-top: 0.5rem;height: 0.88rem;line-height: 0.88rem;border: 1px solid #b4dcfb;border-radius: 0.1rem;}
+        .item-02-cl-center {position: relative;width: 55%;margin: auto;}
+        .item-02-cl-center-01 {width: 100%;border: 1px dashed #d4d4d4;overflow: hidden;margin-top: 0.4rem;}
+        .item-02-cl-center-01-img {width: 100%;height: 100%;}
+        .sz-fl-container-file {position: absolute;top: 0;left: 0;width: 100%;height: 100%;outline: none;opacity: 0;cursor: pointer;}
+        .item-02-cl-center-02 {width: 68%;margin: auto;background-color: #f8b551;color: white;text-align: center;height: 0.44rem;line-height: 0.44rem;cursor: pointer;font-size: 0.24rem;border-radius: 0.5rem;margin-top: 0.28rem;}
+        .member-next{margin-top: 2rem;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="member-banner"><img class="member-banner-img" src="img/person/menber-banner.jpg" /></div>
+    <div class="member-art">
+        <div class="member-art-01">* 退费申请：</div>
+        <div class="member-art-02">退会前请先填写退会申请表：下载<a href="退会申请表.doc" class="member-art-02-a">退会申请表</a>，填写完毕后<span class="member-art-02-span">必须盖公章，否则视为无效申请表</span>。</div>
+        <div class="item-02 item-02-cl" >
+            <div class="item-02-cl-center">
+                <div class="item-02-cl-center-01"><img class="item-02-cl-center-01-img" id="imgFile" src="img/person/member-cl.jpg"></div>
+                <div class="item-02-cl-center-02">上传退会申请表</div>
+                <input class="sz-fl-container-file" type="file" id="uppic" onchange="upimg(this)">
+            </div>
+
+        </div>
+    </div>
+    <div class="member-next">提交</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js2/url.js"></script>
+<script>
+    function upimg(t) {
+        var imgFile  = t.files[0];
+        var fr = new FileReader();
+        fr.onload = function(){
+            $("#imgFile").attr("src",fr.result)
+        };
+        fr.readAsDataURL(imgFile);
+    }
+
+    var w01=$(".item-02-cl").width();
+    $(".item-02-cl").css("height",w01/1.619 + "px");
+    var w02=$(".item-02-cl-center-01").width();
+    $(".item-02-cl-center-01").css("height",w02/1.634 + "px")
+
+    
+    
+    $(document).on("click",".member-next",function () {
+        // 上传材料
+        var pic = $("#uppic")[0].files[0];
+        var formData  = new FormData();
+        formData.append("file",pic);
+        fileImg(formData);
+
+        if(!pic){
+            pic =$("#imgFile").attr("src");
+            alert("请上传材料证明");
+            return false;
+        }
+
+        var json = {
+            UserInfo:cookie.get("accessToken"),
+            SignoutVoucher:sessionStorage.getItem("file")
+        };
+
+        $.ajax({
+            url:callurl +'/CompanyInfo/Info/Signout',
+            type:'post',
+            data: json,
+            success: function (res) {
+                console.log(res);
+                alert(res.Msg);
+                if(res.Success == "true"){
+                    window.location.href='person.html'
+                }
+            },
+            error:function (xml) {
+                console.log(xml);
+
+            }
+
+        });
+
+
+
+
+
+
+    })
+
+</script>
+</body>
+</html>

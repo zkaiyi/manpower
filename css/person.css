@@ -1,0 +1,64 @@
+body{background-color: #f5f5f5;}
+
+.banner{width: 100%;background-image: url("../img/person/banner.jpg");background-size: 100% 100%;background-repeat: no-repeat;padding-top: 0.43rem;position: relative;
+    /*height: 2.69rem;*/
+}
+.banner-top{width: 1.17rem;margin: auto;border-radius: 50%;border:6px solid #a9ccff;height: 1.17rem;position: relative;overflow: hidden;}
+.banner-top-img{width: 100%;    vertical-align: top;}
+.banner-name{width: 100%;text-align: center;color: white;font-size: 0.3rem;line-height: 0.6rem;margin-top: 0.1rem;}
+.banner-ip{width: 100%;text-align: center;color: white;font-size: 0.24rem;}
+.sz-fl-container-file{cursor: pointer;position: absolute;background-color:red;z-index:5;width:100%;height: 100%;top: 0;left: 0;opacity: 0;}
+.edit-container{width: 100%;}
+.list{width: 100%;height:0.97rem;line-height: 0.97rem;background-color: white;border-top: 1px solid #eeeeee; }
+.list:nth-last-child(1){border-bottom:1px solid #eeeeee;  }
+.list-item{width: 90%;margin: auto;line-height: 0.97rem;}
+.list-item-fl{font-size: 0.3rem;line-height: 0.97rem;color: #454545;}
+.list-item-fl-img{width: 0.38rem;vertical-align: middle;margin-right: 0.46rem;}
+.list-item-fr-img{width: 0.15rem;vertical-align: middle;margin-top: -0.2rem;}
+.list a{display: block;width: 100%;height: 100%;}
+.edit-container{margin-top: 0.35rem;}
+.submit-contaienr{width: 90%;margin: auto;margin-top: 0.39rem;}
+.bth{background-color:#5197ff;text-align: center;color: white;font-size: 0.36rem;height: 0.79rem;line-height: 0.79rem; border-radius: 0.1rem;}
+
+/*我的报名*/
+.apply-contaienr{width:90.67%;margin: auto;padding-top: 0.33rem; }
+.apply{width: 100%;background-color: white;-webkit-box-shadow: 0px 3px 0px #5197ff inset;cursor: pointer;margin-top: 0.2rem;
+    border-radius: 0.1rem;height: 2.16rem;}
+.apply-01{font-size: 0.36rem;color: #454545;line-height: 100%;margin-left: 2.9%;padding-top: 0.5rem;}
+.apply-01-span{color: #5197ff;}
+.apply-02{font-size: 0.3rem;color:#999999; line-height: 100%;margin-left: 2.9%;margin-top: 0.36rem;}
+.apply-02-span{color: #454545;}
+.apply:nth-child(1){margin-top: 0;}
+/*报名详细*/
+.apply-details-list{width: 100%;background-color: white;padding-bottom: 0.12rem;}
+.apply-details-list-01{height: 1.1rem;line-height: 1.1rem;font-size: 0.32rem;color: #454545;border-bottom: 1px solid #f5f5f5;}
+.apply-details-list-01-span01{color: #5197ff;margin-left: 4.5%;}
+.apply-details-list-container{width: 91%;margin: auto;}
+.apply-details-list-container-list{height: 1.1rem;line-height: 1.1rem;font-size: 0.32rem;color: #454545;border-bottom: 1px solid #f5f5f5;}
+.apply-details-list-container-list-container{width: 100%;}
+.a-d-l-c-l-c-fl{font-size: 0.3rem;color: #888888;width: 25%;}
+.a-d-l-c-l-c-fr{width: 75%;}
+.a-d-l-c-l-c-fr-int{width: 100%;height: 0.9rem;    font-size: 0.3rem;color: #333333;border: none;outline: none;}
+.a-d-l-c-l-c-fr{font-size: 0.3rem;color: #333333;}
+.apply-details-list-container-list-container01{width: 50%;}
+.apply-details-list-container-list-container01 .a-d-l-c-l-c-fl{width: 40%;}
+.apply-details-list-container-list-container01 .a-d-l-c-l-c-fr{width:58%;}
+.apply-details-edit{margin: auto;width: 2rem;height: 0.6rem;line-height: 0.6rem;background-color:#5197ff;text-align: center;color: white;font-size: 0.3rem;border-radius: 0.1rem;margin-top: 0.15rem;cursor: pointer; }
+.a-d-l-c-l-c-fr input[disabled]{opacity:1;background-color: white;color: #333333;}
+.apply-details-list:nth-child(n+2){margin-top: 0.11rem;}
+.bth{cursor: pointer;}
+
+
+/*0222*/
+/*我的报名*/
+.apply-contaienr-zw{text-align: center;}
+.apply-contaienr-zw-t{font-size: 0.48rem;color: #bfbfbf;text-align: center;}
+.apply-details-list-01-span01{width: 30%;}
+.apply-details-list-01-span02{overflow: hidden;text-overflow: ellipsis;    white-space: nowrap;width: 65%;}
+.apply-01{line-height: 120%;}
+
+
+/*0508修改*/
+.banner-name{width: 90%;margin: auto;}
+.banner{min-height: 2.69rem;padding-bottom: 0.2rem;}
+.zhiwu{font-size: 0.26rem;color: #f8a811;text-align: center;line-height: 0.4rem;color:white;}

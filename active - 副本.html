@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/foget-pass.css" />
+    <link rel="stylesheet" href="css/active.css" />
+    <script src="js/font.js"></script>
+    <title>活动报名</title>
+    <style>
+        body{background-color:#f1f1f1; }
+    </style>
+</head>
+<body>
+<div class="container container-active" id="content">
+    <div class="banner"><img class="banner-img" id="cover-img" onerror="this.src='img/index/banner.jpg'" src="img/index/banner.jpg" /></div>
+
+    <div class="title-container">
+        <div class="title">
+            <div class="title-01" id="content-title"></div>
+            <div class="title-02">阅读：<span id="read-num"></span></div>
+            <div class="title-02 clearfix">
+                <div class="title-03-01 fl">总报名数：<span id="apply-num"></span></div>
+                <div class="title-03-01 fr">剩余报名数：<span id="synum"></span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="title-container title-container02">
+        <div class="title title02">
+           <div class="title02-01" id="content-info"></div>
+           <div class="title02-02">
+               <div class="title02-02-t" ><span style="font-weight: bold;" >活动时间：</span><span id="activity-time"></span></div>
+               <div class="title02-02-t" ><span style="font-weight: bold;" >活动地点：</span><span id="activity-place"></span></div>
+               <div class="title02-02-t" ><span style="font-weight: bold;" >费&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用：</span><span id="activity-money"></span></div>
+               <div class="title02-02-t" ><span style="font-weight: bold;" >报名时间：</span><span id="apply-time"></span></div>
+               <div class="title02-02-t" ><span style="font-weight: bold;" >截止时间：</span><span id="apply-jz"></span></div>
+           </div>
+           <div class="title02-03"><span style="font-weight: bold;color: #ea7e29;   font-size: 0.28rem;">温馨提示：</span>报名成功单位，将会发短信通知到指定地点参加活动，请保持手机通畅。接到通知的单位，如因故无法出席活动，请提前一天拨打秘书处联系人电话告知。</div>
+        </div>
+    </div>
+
+    <div class="active-sub">我要报名</div>
+
+</div>
+
+<div class="tcc-zz hide"></div>
+
+<!--填写报名人数-->
+<div class="tcc-wapper hide" id="people-num">
+    <div class="tcc-wapper-title clearfix"><div class="tcc-wapper-title-span fl"></div>填写报名人数</div>
+
+    <div class="tcc-wapper-item">
+        <div class="item">
+            <div class="item-01">报名人数</div>
+            <div class="item-02"><input id="num" class="item-02-input" type="text" placeholder="请输入您的报名人数"></div>
+            <div id="tip2" class="tip hide">请输入报名人数！</div>
+        </div>
+    </div>
+
+    <div class="tcc-wapper-qd" onclick="qd()">确定</div>
+
+</div>
+
+<!--填写报名人员信息-->
+<div class="tcc-wapper hide" id="people-list">
+    <div class="items-container">
+
+    </div>
+
+
+    <div class="tcc-wapper-qd" onclick="qd1()">确定</div>
+
+</div>
+
+<!--报名成功-->
+<div class="success-wipper hide">
+    <div class="success-wipper-t1">
+        <img class="success-wipper-t1-img" src="img/active/success.png" />
+        <div class="success-wipper-t1-t">填写成功</div>
+    </div>
+    <div class="success-wipper-t2"><a href="index.html">返回</a></div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script>
+    $(document).on("click",".active-sub",function () {
+
+
+        if($(".active-sub").text() == "活动已结束"){
+            alert("活动已结束")
+        }else if($(".active-sub").text() == "名额已满"){
+            alert("名额已满")
+        }else if($(".active-sub").text() == "还未开始"){
+            alert("还未开始")
+        }else {
+
+            if(sessionStorage.getItem("IsVip") == "0"){
+                if(sessionStorage.getItem("IsPay") == "false"){
+                    alert("请先去进行缴费");
+                }else {
+
+                    var accessToken = {
+                        UserInfo:cookie.get("accessToken")
+                    };
+                    $.ajax({
+                        url:callurl + '/CompanyInfo/Info',
+                        type:'post',
+                        data:accessToken,
+                        success:function (res) {
+
+                            console.log(res);
+                            if(res.Infor.Status > 0 ){
+                                alert("该用户还在审核过程中")
+                            }else {
+                                $(".tcc-zz").removeClass("hide");
+                                $("#people-num").removeClass("hide");
+                                setTimeout(function () {
+                                    $(".tcc-wapper").addClass("tcc-wapper-add");
+                                },10);
+
+
+                                $("html").css({
+                                    overflow:"hidden",
+                                    height:"100%"
+                                });
+
+                                $("body").css({
+                                    overflow:"hidden",
+                                    height:"100%"
+                                })
+                            }
+
+
+                        },
+                        error:function (xml) {
+                            console.log(xml);
+                            console.log("失败");
+                        }
+                    });
+
+
+
+
+                }
+            }else {
+
+
+                var accessToken = {
+                    UserInfo:cookie.get("accessToken")
+                };
+                $.ajax({
+                    url:callurl + '/CompanyInfo/Info',
+                    type:'post',
+                    data:accessToken,
+                    success:function (res) {
+
+                        console.log(res);
+                        if(res.Infor.Status > 0 ){
+                            alert("该用户还在审核过程中")
+                        }else {
+                            $(".tcc-zz").removeClass("hide");
+                            $("#people-num").removeClass("hide");
+                            setTimeout(function () {
+                                $(".tcc-wapper").addClass("tcc-wapper-add");
+                            },10);
+
+
+                            $("html").css({
+                                overflow:"hidden",
+                                height:"100%"
+                            });
+
+                            $("body").css({
+                                overflow:"hidden",
+                                height:"100%"
+                            })
+                        }
+
+
+                    },
+                    error:function (xml) {
+                        console.log(xml);
+                        console.log("失败");
+                    }
+                });
+
+            }
+
+            //
+            // if(sessionStorage.getItem("IsPay") == "false"){
+            //     if(sessionStorage.getItem("IsVip") == "0"){
+            //         alert("请先去进行缴费");
+            //     }
+            // }else {
+            //     var accessToken = {
+            //         UserInfo:cookie.get("accessToken")
+            //     };
+            //     $.ajax({
+            //         url:callurl + '/CompanyInfo/Info',
+            //         type:'post',
+            //         data:accessToken,
+            //         success:function (res) {
+            //
+            //             console.log(res);
+            //             if(res.Infor.Status > 0 ){
+            //                 alert("该用户还在审核过程中")
+            //             }else {
+            //                 $(".tcc-zz").removeClass("hide");
+            //                 $("#people-num").removeClass("hide");
+            //                 setTimeout(function () {
+            //                     $(".tcc-wapper").addClass("tcc-wapper-add");
+            //                 },10);
+            //
+            //
+            //                 $("html").css({
+            //                     overflow:"hidden",
+            //                     height:"100%"
+            //                 });
+            //
+            //                 $("body").css({
+            //                     overflow:"hidden",
+            //                     height:"100%"
+            //                 })
+            //             }
+            //
+            //
+            //         },
+            //         error:function (xml) {
+            //             console.log(xml);
+            //             console.log("失败");
+            //         }
+            //     });
+            // }
+
+
+
+
+
+
+
+
+
+        }
+
+
+    });
+
+    $(document).on("click",".tcc-zz",function () {
+        $(".tcc-zz").addClass("hide");
+        $(".tcc-wapper").removeClass("tcc-wapper-add");
+        $("#people-list").addClass("hide");
+        $("#people-num").addClass("hide");
+        $(".items-container").html("");
+        $(".success-wipper").addClass("hide");
+
+        $("html").css({
+            overflow:"auto",
+            height:"auto"
+        });
+
+        $("body").css({
+            overflow:"auto",
+            height:"auto"
+        })
+
+        // $("#people-num").removeClass("hide")
+    })
+
+ </script>
+<script src="js/jquery.min.js"></script>
+<script src="js2/url.js"></script>
+<script src="js2/util.js"></script>
+<script src="js2/active.js"></script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+
+$(document).ready(function () {
+    var id=getCurrentId();
+    getContentInfo(id);
+});
+function getContentInfo(id) {
+    $.post(callurl+"/ActivityInfo/Info",{ID:id,UserInfo:cookie.get("accessToken")},function (res) {
+        console.log(res);
+        if (res.Success){
+            var info=res.Infor;
+
+            sessionStorage.setItem("MaxLimitNum",info.MaxLimitNum);
+
+
+          if(info.IsSignUp == true){
+              window.location.href='person-apply-content.html?ActivityID=' + id;
+              sessionStorage.setItem("person-apply-content-qxId",info.RecordID)
+
+          }
+
+
+
+
+            // 判断活动时间是否结束
+            var jdata = new Date();
+            var activedata = new Date(info.ESignupTime);
+            var startdata = new Date(info.SSignupTime);
+            var time1 = jdata.getTime();
+            var time2 = activedata.getTime();
+            var time3 = startdata.getTime();
+            if(time1 > time2 ){
+                $(".active-sub").html("活动已结束").css("background-color","#b5b5b5");
+            }
+
+            if(time1 < time3 ){
+                $(".active-sub").html("还未开始").css("background-color","#b5b5b5");
+            }
+
+            if(info.LastNum === 0){
+                $(".active-sub").html("名额已满").css("background-color","#f8b551");
+            }
+
+
+
+
+
+            var CoverImg = info.CoverImg;
+
+            if(info.CoverImg == null){
+                CoverImg ="../img/index/banner.jpg";
+            }
+            console.log(CoverImg);
+            $(".banner-img").attr("src",CoverImg);
+
+            $("#content-title").html(info.Name);
+            $("#read-num").html(info.ReadNum);
+            $("#apply-num").html(info.SignupNum);
+            $("#synum").html(info.LastNum);
+            $("#content-info").html(info.ActivityContent);
+            var  activityTime = info.ActivityTime.replace(/\-/g, '/');
+            var time=new Date(activityTime);
+
+            console.log(time);
+            var month=time.getMonth()+1;
+            var date=time.getDate();
+            var day=time.getDay();
+            var hour=time.getHours();
+            var minute = time.getMinutes();
+            var second=time.getSeconds();
+            var t;
+            // 凌晨:3:00--6:00
+            // 早晨:6:00---8:00
+            // 上午:8:00--11:00
+            // 中午:11:00--13:00
+            // 下午:13:00--17:00
+            // 傍晚:17:00--19:00
+            // 晚上:19:00--23:00
+            // 深夜:23:00--3:00
+
+
+
+
+            if (hour>=3&&hour<6){
+                t="凌晨";
+            }else if (hour>=6&&hour<8){
+                t="早晨";
+            } else if (hour>=8&&hour<11){
+                t="上午";
+            }else if (hour>=11&&hour<13){
+                t="中午";
+            }else if (hour>=13&&hour<17){
+                t="下午";
+            }else if (hour>=17&&hour<19){
+                t="傍晚";
+            }else if (hour>=19&&hour<23){
+                t="晚上";
+            }else{
+                t="深夜";
+            }
+            if (hour>12){
+                hour=hour-12;
+            }
+            var t1;
+            if (day==0){
+                t1="周日";
+            } else if (day==1){
+                t1="周一";
+            } else if (day==2){
+                t1="周二";
+            }else if (day==3){
+                t1="周三";
+            }else if (day==4){
+                t1="周四";
+            }else if (day==5){
+                t1="周五";
+            }else if (day==6){
+                t1="周六";
+            }
+            if (hour<10){
+                hour="0"+hour;
+            }
+            if (second<10){
+                second="0"+second;
+            }
+            var fy = info.Cost;
+            if(fy == null){
+                fy="免费"
+            }
+
+            var ActivityTime = info.ActivityTime;
+            var ActivityTime01 = ActivityTime.split("-")[1].split("0")[1];
+            var ActivityTime02 = ActivityTime.split("-")[2].split(" ")[0];
+            var ActivityTime03 = ActivityTime.split("-")[2].split(" ")[1].split(":");
+
+
+
+
+
+            console.log(ActivityTime03);
+            $("#activity-time").html(info.ActivityTime);
+            $("#activity-place").html(info.Address);
+            $("#activity-money").html(fy);
+            $("#apply-time").html(info.SSignupTime);
+            $("#apply-jz").html(info.ESignupTime)
+
+
+
+            // 非会员
+            if(info.IsVip == "1"){
+                $("#apply-num").html(info.NoVipSignupNum);
+                $("#synum").html(info.NoVipLastNum);
+                sessionStorage.setItem("MaxLimitNum",info.NoVipMaxLimitNum);
+            }
+
+
+            // 弹出缴费
+            sessionStorage.setItem("IsPay",info.IsPay);
+            sessionStorage.setItem("IsVip",info.IsVip);
+
+
+
+
+
+
+        }else{
+            alert(res.Msg);
+        }
+    });
+}
+
+function showPeopleListInputs(num){
+    $("#people-num").addClass("hide").removeClass("tcc-wapper-add");
+
+    $("#people-list").removeClass("hide");
+    for(var i=0;i<num;i++){
+        var html = ' <div class="items">\n' +
+            '            <div class="tcc-wapper-title clearfix"><div class="tcc-wapper-title-span fl"></div>填写信息</div>\n' +
+            '            <div class="tcc-wapper-item">\n' +
+            '                <div class="item">\n' +
+            '                    <div class="item-01">姓名</div>\n' +
+            '                    <div class="item-02"><input  class="item-02-input namesID" type="text" placeholder="请输入您的姓名"></div>\n' +
+            '                    <!--<div id="tip2" class="tip hide">请输入您姓名！</div>-->\n' +
+            '                </div>\n' +
+            '\n' +
+            '                <div class="item">\n' +
+            '                    <div class="item-01">联系方式</div>\n' +
+            '                    <div class="item-02"><input  class="item-02-input phoneID" type="text" placeholder="请输入您的联系方式"></div>\n' +
+            '\n' +
+            '                </div>\n' +
+            '\n' +
+            '                <div class="item">\n' +
+            '                    <div class="item-01">职务</div>\n' +
+            '                    <div class="item-02"><input  class="item-02-input zwID" type="text" placeholder="请确认您的职务"></div>\n' +
+            '\n' +
+            '                </div>\n' +
+            '\n' +
+            '\n' +
+            '            </div>\n' +
+            '        </div>';
+        $(".items-container").append(html)
+    }
+}
+
+
+// 报名人数
+function qd() {
+    var MaxLimitNum = sessionStorage.getItem("MaxLimitNum");
+    var num = $("#num").val();
+    if(num){
+
+
+        if(num  - MaxLimitNum > 0){
+            alert("最多不能超过" + MaxLimitNum + "人！" );
+        }else if(num === "0"){
+            alert("人数不能为0！");
+        }else {
+            showPeopleListInputs(num);
+        }
+
+
+    }else {
+        alert("人数不能为空！");
+    }
+
+}
+
+
+
+function phoneAp01(tel) {
+    if (tel.search(/^(((11[0-9]{1})|(12[0-9]{1})|(13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(16[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/)!= -1){
+        return true;
+    }
+    else{
+        alert("联系方式输入有误，请重填");
+        return false;
+    }
+}
+
+function phoneAp02(tel) {
+    if (tel.search(/^(\(\d{3,4}\)|\d{3,4}-|\s)?\d{7,14}$/)!= -1){
+        return true;
+    }
+    else{
+        alert('联系方式输入有误，请重填');
+        return false;
+    }
+}
+
+
+
+function qd1() {
+
+
+
+        var list =$(".items");
+        var message = [];
+        console.log(list.length)
+        for(i=0;i<list.length;i++){
+            var messageArray = {};
+            var nameAp =  $(list[i]).children().children().children().find(".namesID").val();
+            var phoneAp = $(list[i]).children().children().children().find(".phoneID").val();
+            var zwAp = $(list[i]).children().children().children().find(".zwID").val();
+
+            if (nameAp==""){
+                alert("姓名不得为空");
+                return;
+            }
+            if (phoneAp==""){
+                alert("手机号不得为空");
+                return;
+            }
+            if (phoneAp.length==11){
+                //手机号正则
+                if(!(/^(((11[0-9]{1})|(12[0-9]{1})|(13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(16[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(phoneAp))){
+                    alert("联系方式输入有误，请重填");
+                    return false;
+                }
+            }else{
+                alert("联系方式输入有误，请重填");
+                return;
+            }
+
+
+            // else if(phoneAp.length==8){
+            //     // //电话号码正则
+            //     // if(!(/^(\(\d{3,4}\)|\d{3,4}-|\s)?\d{7,14}$/.test(phoneAp))){
+            //     //     alert('联系方式输入有误，请重填');
+            //     //     return false;
+            //     // }
+            // }else if(phoneAp.length==12){
+            //     // //电话号码正则
+            //     // if(!(/^(\(\d{3,4}\)|\d{3,4}-|\s)?\d{7,14}$/.test(phoneAp))){
+            //     //     alert('联系方式输入有误，请重填');
+            //     //     return false;
+            //     // }
+            // }
+            //
+
+            messageArray.Name = nameAp;
+            messageArray.ContactNumber = phoneAp;
+            messageArray.Duties = zwAp;
+
+
+            message.push(messageArray);
+        }
+        var id=getCurrentId();
+
+
+        // alert("111")
+        var params={
+            ActivityID:id,
+            PeopleList:JSON.stringify(message),
+            UserInfo:cookie.get("accessToken")
+        };
+        $.post(callurl+"/ActivityInfo/SignUp",params,function (res) {
+            if (res.Success){
+                // $("#people-num").removeClass("hide");
+                $("#people-list").addClass("hide");
+                $(".items-container").html();
+                $(".success-wipper").removeClass("hide");
+            }else{
+                alert(res.Msg)
+            }
+        });
+
+
+
+
+
+
+}

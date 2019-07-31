@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/res.css" />
+    <script src="js/font.js"></script>
+    <title>非会员注册</title>
+    <style>
+        body{background-color: white;}
+    </style>
+</head>
+<body>
+<div class="contaienr">
+    <div class="banner"><img class="banner-img" src="img/login/login-banner.jpg" /></div>
+    <div class="input-container">
+        <div class="list clearfix">
+            <img class="list-img fl" src="img/login/i-01.png" /><span class="list-s01 fl"></span><input id="name" class="list-input fl" type="text" placeholder="请输入公司名称">
+            <div id="tips1" class="tip hide">请输入公司名称!</div>
+        </div>
+
+        <div class="list clearfix">
+            <img class="list-img fl" src="img/login/i-02.png" /><span class="list-s01 fl"></span><input id="password" class="list-input fl" type="password" placeholder="请输入密码">
+            <div id="tips2" class="tip hide">请输入密码!</div>
+        </div>
+
+        <div class="list clearfix">
+            <img class="list-img fl" src="img/login/i-02.png" /><span class="list-s01 fl"></span><input id="jpassword" class="list-input fl" type="password" placeholder="请再次输入密码">
+            <div id="tips3" class="tip hide">请再次输入密码!</div>
+        </div>
+
+        <div class="list clearfix">
+            <img class="list-img fl" src="img/login/i-03.png" /><span class="list-s01 fl"></span><input id="username" class="list-input fl" type="text" placeholder="请输入联系人">
+            <div id="tips4" class="tip hide">请输入联系人!</div>
+        </div>
+
+        <div class="list clearfix">
+            <img class="list-img fl" src="img/login/i-04.png" /><span class="list-s01 fl"></span><input id="mobel" name="telephone" class="list-input fl" type="tel" placeholder="请输入手机号码">
+            <div id="tips5" class="tip hide">请输入手机号码!</div>
+        </div>
+
+        <div class="yzm clearfix">
+            <div class="list list-yzm fl clearfix">
+                <img class="list-img list-yzm-img  fl" src="img/login/i-05.png" /><span class="list-s01 list-yzm-s01 fl"></span><input id="yzm" class="list-input list-yzm-input fl"  placeholder="请输入短信验证码">
+                <div id="tips6" class="tip hide">请输入短信验证码!</div>
+            </div>
+            <input class="yzm-fr fr" id="btnSendCode" type="button" value="获取验证码" onclick="sendMessage()" />
+        </div>
+
+    </div>
+    <div class="sumit-res-container">
+        <div class="sumit-res" onClick="validate()">注册</div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/res.js"></script>
+
+<script src="js2/url-login.js"></script>
+<script src="js2/res-no.js"></script>
+</body>
+</html>

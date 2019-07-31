@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/font.js"></script>
+    <title>首页</title>
+    <style>
+        body{background-color:#f1f1f1; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="banner"><img class="banner-img" src="img/index/banner.jpg" /></div>
+
+    <div class="active-list" id="listItem" >
+
+    </div>
+
+    <div class="footer-zw"></div>
+
+    <div class="footer clearfix">
+        <div class="footer-fl fl">
+            <a href="index.html">
+                <div class="footer-fl-01"><img class="footer-fl-01-img" src="img/index/home.jpg" /></div>
+                <div class="footer-fl-02">首页</div>
+            </a>
+        </div>
+        <div class="footer-fl fr">
+            <a href="person.html">
+                <div class="footer-fl-01"><img class="footer-fl-01-img" src="img/index/person.jpg" /></div>
+                <div class="footer-fl-02">会员中心</div>
+            </a>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js2/url.js"></script>
+<script src="js2/index.js"></script>
+<script>
+    // 滚动的高度
+    function getScrollTop () {
+        // 考虑到浏览器版本兼容性问题，解析方式可能会不一样
+        return document.documentElement.scrollTop || document.body.scrollTop
+    }
+
+    // 获取视口高度
+    function getWinHeight () {
+        // 浏览器可见内容高度 || 浏览器所有内容高度(考虑到浏览器版本兼容性问题，解析方式可能会不一样)
+        return document.documentElement.clientHeight || document.body.clientHeight
+    }
+
+    // 文档高度
+    function getScrollHeight() {
+        var  bodyScrollHeight = 0;
+        var documentScrollHeight = 0;
+        if (document.body) {
+            bodyScrollHeight = document.body.scrollHeight
+        }
+        if (document.documentElement) {
+            documentScrollHeight = document.documentElement.scrollHeight
+        }
+        // 当页面内容超出浏览器可视窗口大小时，Html的高度包含body高度+margin+padding+border所以html高度可能会大于body高度
+        return (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight
+    }
+    // console.log("一屏高度:" + getWinHeight());
+    window.onscroll = function () {
+        // console.log("文档高度:" + getScrollHeight());
+        // console.log("滚动的高度：" + getScrollTop());
+        var page = sessionStorage.getItem("active-page");
+        if(getScrollTop() >= getScrollHeight() -getWinHeight()  ){
+            var page = sessionStorage.getItem("active-page");
+            getObjectList(parseInt(page)+1,7);
+        }
+    };
+
+</script>
+</body>
+</html>

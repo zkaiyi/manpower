@@ -1,0 +1,100 @@
+.banner{width: 100%;}
+.banner-img{width: 100%;}
+.title-container{width: 100%;background-color: white;}
+.title{width: 90.67%;margin: auto;padding-top: 0.27rem;padding-bottom: 0.1rem;}
+.title-01{font-size: 0.32rem;color: #2b2a2a;line-height: 0.48rem;font-weight: bold;}
+.title-02{font-size: 0.24rem;color: #999999;line-height: 0.48rem;}
+.title-container02{margin-top: 0.08rem;}
+.title02-01{font-size: 0.3rem;line-height: 0.6rem;color: #333333;text-indent: 0.6rem;}
+.title02-02-t{font-size: 0.3rem;line-height: 0.48rem;color: #333333;}
+.title02-03{font-size: 0.24rem;line-height: 0.48rem;color: #333333;margin-top: 0.35rem;}
+.title02{padding-top: 0.4rem;padding-bottom: 0.9rem;}
+.title02-02{margin-top: 0.6rem;}
+.active-sub{width: 90.67%;margin: auto;background-color:#5197ff;text-align: center;color: white;font-size: 0.36rem; height: 0.8rem;line-height: 0.8rem;margin-top:0.35rem;cursor: pointer;border-radius: 0.1rem; }
+.container-active{padding-bottom: 0.5rem;width: 100%;}
+
+/*弹出层遮罩*/
+.tcc-zz{width: 100%;height: 100%;position: fixed;z-index: 555;background-color: rgba(0,0,0,0.6);top: 0;}
+/*html , body {overflow: hidden;height: 100%;}*/
+.tcc-wapper{
+    transition: all 0.4s ease-in 0.02s;
+    -webkit-transition:  all 0.4s ease-in 0.02s;
+    -o-transition: all 0.4s ease-in 0.02s;
+    -moz-transition:  all 0.4s ease-in 0.02s;
+    background-color: white;width: 93.6%;margin: auto;height: 5.49rem;position: fixed;z-index: 666;top: 25%;left: 3.2%;overflow: hidden;top: 100%;
+    border-radius: 0.2rem;
+}
+.tcc-wapper-add{
+    top: 25%;
+}
+.tcc-wapper-title{width:100%;background-color: #5197ff;height: 1rem;line-height: 1rem;color: white;font-size: 0.36rem; }
+.tcc-wapper-title-span{display: inline-block;width:0.08rem;height: 0.36rem;background-color: white;border-radius: 0.1rem;margin-left: 4.205%;margin-right:0.19rem; margin-top: 0.32rem; }
+.tcc-wapper-item{width: 91.59%;margin: auto;}
+.item-01{color: #333333;font-size: 0.3rem;}
+.tcc-wapper-qd{width:49.857%;margin: auto;height: 0.8rem;line-height: 0.8rem;background-color: #5197ff;text-align: center;cursor: pointer;color: white; font-size: 0.36rem;border-radius: 2rem;    margin-top: 0.8rem;}
+
+
+
+
+
+/*个人报名取消报名*/
+.active-sub-qx{width: 90.67%;margin: auto;height: 0.8rem;    margin-top: 0.35rem;}
+.active-sub-qx-fl{width: 48%;text-align: center;color: white;    background-color: #5197ff;font-size: 0.36rem;    line-height: 0.8rem;cursor: pointer;border-radius: 0.1rem;}
+.active-sub-qx-fl a{text-decoration: none;color: white;}
+
+
+/*填写报名信息-details*/
+#people-list{
+    top: 15%;height: 9rem;overflow: auto;background-color: transparent;border-radius: 0;
+}
+.item{margin-top: 0.25rem;}
+.items{width: 100%;border-radius: 0.2rem;overflow: hidden;background-color: white;padding-bottom: 1rem;}
+.items:nth-child(n+2){    margin-top: 0.6rem;}
+.tcc-wapper-qd{margin-top: 0.2rem;}
+
+
+/*填写报名成功*/
+/*报名成功*/
+.success-wipper{top: 25%;background-color: #ebebeb;width: 93.6%;margin: auto;height: 5.49rem;position: fixed;z-index: 666;left: 3.2%;overflow: hidden;    border-radius: 0.2rem;}
+.success-wipper-t2{    width: 100%;height: 1rem;line-height: 1rem;color: #292929;font-size: 0.32rem;text-align: center;}
+.success-wipper-t2 a{ color: #292929;text-decoration: none;display: block;width: 100%;height: 100%;}
+.success-wipper-t1{height: 4.49rem;width: 100%;text-align: center;background-image: url("../img/active/bg.png");background-size: 100% 100%;}
+.success-wipper-t1-img{width: 40%;margin-top: 8%;}
+.success-wipper-t1-t{font-size: 0.3rem;line-height: 100%;color: white;margin-top: 0.2rem;}
+
+.tcc-zz{cursor: pointer;}
+.success-wipper-t2{cursor: pointer;}
+.tcc-wapper-qd{    margin-top: 0.5rem;}
+.tcc-wapper-qd{cursor: pointer;}
+
+/*0218*/
+.item-02{margin-top: 10px;}
+.items{padding-bottom: 0.8rem;}
+
+.return-hoom{position: fixed;right: 5px;top: 30%;z-index: 777;width: 0.6rem;height: 0.6rem;background-color: white;border-radius: 2px;}
+.return-hoom a{display:block;width: 100%;height: 100%;}
+.return-hoom-img{width: 100%;vertical-align: top;}
+
+/*0219*/
+.title-01{
+    font-size: 0.34rem;
+}
+.title02-03{font-size: 0.26rem;}
+.title-01{font-size: 0.48rem;    line-height: 0.7rem;font-weight: normal;}
+#synum{color: red;}
+body{position: relative;}
+.tcc-zz{position: absolute;}
+#people-list{position: absolute;}
+#success-wipper{position: absolute;}
+#people-num{position: absolute;}
+.tcc-wapper{
+    transition: top 0.4s ease-in 0.02s;
+    -webkit-transition:  top 0.4s ease-in 0.02s;
+    -o-transition: top 0.4s ease-in 0.02s;
+    -moz-transition:  top 0.4s ease-in 0.02s;
+}
+
+
+/*0614*/
+.title02-01{    word-break: break-all;}
+.title02-01 img{width: 100%;}
